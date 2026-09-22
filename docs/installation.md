@@ -1,6 +1,6 @@
 # 설치와 웹 관리
 
-처음 설치한다면 [README의 빠른 설치](../README.md#빠른-설치--docker)부터 시작하세요. 필요한 RAM·디스크·지원 운영체제는 [실행 환경과 저장 공간](hardware-requirements.md)에 정리했습니다.
+처음 설치한다면 [README의 운영체제별 사양과 설치](../README.md#windows)부터 시작하세요. Windows·Linux·macOS·Docker 안내가 각각 같은 형식으로 정리되어 있습니다. 자세한 용량 산정 근거는 [실행 환경과 저장 공간](hardware-requirements.md)을 참고하세요.
 
 Windows 10/11 x64에서 Docker 없이 설치하려면 프로젝트 루트의 **`Install-Windows.cmd`**를 더블클릭하세요. 필요한 도구 준비와 앱 설치를 함께 진행합니다. [Windows 전용 안내](windows.md)에 수동 설치, 실행과 문제 해결을 정리했습니다.
 
