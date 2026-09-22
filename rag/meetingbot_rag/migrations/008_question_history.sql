@@ -1,0 +1,10 @@
+ALTER TABLE query_runs ADD COLUMN subject TEXT;
+ALTER TABLE query_runs ADD COLUMN account_label TEXT;
+ALTER TABLE query_runs ADD COLUMN account_role TEXT;
+ALTER TABLE query_runs ADD COLUMN kind TEXT NOT NULL DEFAULT 'question';
+ALTER TABLE query_runs ADD COLUMN workspace_name TEXT;
+UPDATE query_runs SET workspace_name=(SELECT name FROM workspaces WHERE id=query_runs.workspace_id);
+CREATE INDEX query_history_owner ON query_runs(subject,created_at DESC,id DESC);
+CREATE INDEX query_history_workspace ON query_runs(workspace_id,subject,created_at DESC);
+CREATE INDEX query_history_time ON query_runs(created_at DESC,id DESC);
+UPDATE schema_version SET version=8;

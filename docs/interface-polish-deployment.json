@@ -1,0 +1,35 @@
+{
+  "deployed_at": "2026-09-12T08:25:57.786023+00:00",
+  "static_only": true,
+  "service_pids_unchanged": true,
+  "session_count": 10,
+  "sessions_unchanged": true,
+  "workspaces_unchanged": true,
+  "routes_current_build": {
+    "/": true,
+    "/live": true,
+    "/rag": true,
+    "/rag/settings": true
+  },
+  "entry_assets_verified": true,
+  "base_font_px": 16,
+  "small_text_min_px": 12,
+  "frontend_tests": 44,
+  "backend_tests": 102,
+  "rag_tests": 123,
+  "backup_directory": "/YOUR_SOURCE_DIR/meetingbot/.runtime/interface-polish-backups/20260912T081542Z",
+  "ui_checks": [
+    "desktop transcription and library layout",
+    "AI connection details collapsed and accessible",
+    "390px transcription/live/library/settings without horizontal overflow",
+    "16px base font and enlarged controls",
+    "no browser console errors"
+  ],
+  "changes": [
+    "removed server/model dashboards and lab/test badges",
+    "task-oriented titles and navigation labels",
+    "technical connection/engine information in expandable settings",
+    "shared rem typography with larger text",
+    "compact mobile library navigation"
+  ]
+}

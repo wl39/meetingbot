@@ -1,0 +1,15 @@
+{
+  "synthetic": true,
+  "checks": [
+    "Four LLM-selected popup concepts, source quotations, speakers and keyword tags render",
+    "Desktop and 390px mobile screenshots; no horizontal overflow",
+    "Dismissed card remains dismissed across session polling",
+    "Edited utterance removes previous red assertion and replaces it with the current result",
+    "Workspace switch aborts old scope; late A response cannot populate B",
+    "Missing workspace consent disables analysis without sending an utterance",
+    "No runtime errors; every API request intercepted by synthetic same-origin fixtures"
+  ],
+  "errors": [],
+  "unexpectedRequests": [],
+  "screenshots": "/YOUR_SOURCE_DIR/meetingbot/.runtime/meeting-ui-qa"
+}

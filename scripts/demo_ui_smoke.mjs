@@ -1,0 +1,96 @@
+/** Exercise the real local demo APIs and UI with separate browser identities. No production data. */
+import { chromium } from '../frontend/node_modules/playwright-core/index.mjs';
+import { readFile, mkdir, writeFile } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+
+const origin = process.env.DEMO_URL || 'http://127.0.0.1:8895';
+const state = process.env.DEMO_DATA || '/tmp/meetingbot-demo-qa';
+const output = process.env.DEMO_QA_OUTPUT || '/tmp/meetingbot-demo-qa/screenshots';
+await mkdir(output, { recursive: true });
+const report = { checks: [], errors: [] };
+const browser = await chromium.launch({ headless: true, executablePath: process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' });
+try {
+  const a = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
+  const page = await a.newPage();
+  page.on('pageerror', e => report.errors.push(e.message));
+  await page.goto(origin);
+  await page.getByText('공개 데모', { exact: true }).waitFor();
+  await page.getByText('전사 준비 완료', { exact: true }).waitFor();
+  assert.equal(await page.getByRole('heading', { name: '워크스페이스에 로그인' }).count(), 0);
+  assert.equal(await page.getByRole('button', { name: '설정 및 관리', exact: true }).count(), 0);
+  await page.screenshot({ path: output + '/demo-desktop.png', fullPage: true });
+  report.checks.push('Anonymous entry, demo banner, visitor role, management hidden');
+  const info = await (await a.request.get(origin + '/api/access/session')).json();
+  assert.equal((await a.request.get(origin + '/api/system')).status(), 403);
+  assert.equal((await a.request.post(origin + '/api/stt/sessions', { data: {} })).status(), 403);
+  const headers = { Origin: origin, 'X-CSRF-Token': info.csrf };
+  // Tiny synthetic WAV, sent through the browser upload UI, exercises cookie + CSRF + chunks.
+  const samples = 16000, wav = Buffer.alloc(44 + samples * 2);
+  wav.write('RIFF', 0); wav.writeUInt32LE(wav.length - 8, 4); wav.write('WAVEfmt ', 8);
+  wav.writeUInt32LE(16, 16); wav.writeUInt16LE(1, 20); wav.writeUInt16LE(1, 22);
+  wav.writeUInt32LE(16000, 24); wav.writeUInt32LE(32000, 28); wav.writeUInt16LE(2, 32); wav.writeUInt16LE(16, 34);
+  wav.write('data', 36); wav.writeUInt32LE(samples * 2, 40);
+  for (let i = 0; i < samples; i++) wav.writeInt16LE(Math.sin(i * .08) * 8000, 44 + i * 2);
+  await page.locator('input[type=file]').first().setInputFiles({ name: 'demo-synthetic.wav', mimeType: 'audio/wav', buffer: wav });
+  await page.getByRole('button', { name: /전사 시작/ }).click();
+  let records = [];
+  for (let i = 0; i < 50; i++) {
+    records = await (await a.request.get(origin + '/api/stt/sessions')).json();
+    if (records.some(s => s.state === 'COMPLETED')) break;
+    await new Promise(resolve => setTimeout(resolve, 200));
+  }
+  const created = records.find(s => s.state === 'COMPLETED');
+  assert.ok(created, 'File upload must complete');
+  assert.equal((await a.request.get(`${origin}/api/stt/sessions/${created.id}/export`)).status(), 200);
+  const b = await browser.newContext();
+  await b.request.get(origin + '/api/access/session');
+  assert.equal((await b.request.get(`${origin}/api/stt/sessions/${created.id}`)).status(), 404);
+  assert.equal((await b.request.get(`${origin}/api/stt/sessions/${created.id}/export`)).status(), 404);
+  report.checks.push('Anonymous upload and export; second visitor cannot access transcript');
+  await page.getByRole('button', { name: '자료 검색', exact: true }).click();
+  await page.getByRole('heading', { name: '자료 라이브러리', exact: true }).waitFor();
+  assert.equal(await page.getByRole('button', { name: '워크스페이스 만들기' }).count(), 0);
+  const workspaces = await (await a.request.get(origin + '/api/rag/workspaces')).json();
+  assert.ok(workspaces.length && workspaces[0].active_revision_id, 'Sample workspace is indexed');
+  const result = await a.request.post(`${origin}/api/rag/workspaces/${workspaces[0].id}/search`, { headers, data: { query: '운영 서버 로그 보관 기간' } });
+  assert.equal(result.status(), 200, await result.text());
+  assert.ok((await result.json()).evidence.length);
+  report.checks.push('Anonymous RAG search with actual local embedding and sample evidence');
+  await page.screenshot({ path: output + '/demo-library.png', fullPage: true });
+  const superkey = (await readFile(state + '/stt/local-token', 'utf8')).trim();
+  await page.getByRole('button', { name: '접속 키로 로그인', exact: true }).click();
+  await page.getByLabel('접속 키', { exact: true }).fill(superkey);
+  await page.getByRole('button', { name: '로그인', exact: true }).click();
+  await page.getByText('슈퍼관리자', { exact: true }).waitFor();
+  await page.getByRole('button', { name: '설정 및 관리', exact: true }).click();
+  await page.getByRole('button', { name: /접속 및 권한/ }).click();
+  await page.getByRole('heading', { name: '접속 키와 권한' }).waitFor();
+  await page.getByLabel('키 이름').fill('UI 검증 방문자');
+  await page.getByRole('button', { name: '접속 키 발급' }).click();
+  await page.getByLabel('새 접속 키').waitFor();
+  assert.ok((await page.getByLabel('새 접속 키').inputValue()).length >= 32);
+  await page.getByRole('button', { name: '표시 닫기' }).click();
+  await page.screenshot({ path: output + '/demo-access.png', fullPage: true });
+  report.checks.push('Superadministrator login and key issuance UI');
+  const admin = await browser.newContext();
+  const adminKey = (await readFile(state + '/admin-key', 'utf8')).trim();
+  await admin.addInitScript(key => sessionStorage.setItem('stt-token', key), adminKey);
+  const adminPage = await admin.newPage();
+  await adminPage.goto(origin + '/rag');
+  await adminPage.getByText('관리자', { exact: true }).waitFor();
+  await adminPage.getByRole('button', { name: '워크스페이스 만들기' }).waitFor();
+  assert.equal(await adminPage.getByRole('button', { name: '설정 및 관리', exact: true }).count(), 0);
+  report.checks.push('Administrator can manage data but cannot access system or key settings');
+  const mobile = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const mobilePage = await mobile.newPage();
+  await mobilePage.goto(origin);
+  await mobilePage.getByText('공개 데모', { exact: true }).waitFor();
+  assert.ok(await mobilePage.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 2));
+  await mobilePage.screenshot({ path: output + '/demo-mobile.png', fullPage: true });
+  assert.deepEqual(report.errors, []);
+  report.checks.push('Mobile banner fits viewport, no browser errors');
+} finally {
+  await browser.close();
+  await writeFile(output + '/results.json', JSON.stringify(report, null, 2));
+}
+console.log(JSON.stringify(report, null, 2));

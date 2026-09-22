@@ -1,0 +1,76 @@
+{
+  "fixture": "Yuna synthetic Korean speech; one speaker",
+  "https_origin": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net",
+  "workers": {
+    "asr": {
+      "ready": true,
+      "models": {
+        "small": {
+          "ready": true,
+          "revision": "45f3915923c7a79a5a5b5a7d909d39aeb0e5630e"
+        }
+      },
+      "mode": "real",
+      "load_seconds": 1.4085491670120973
+    },
+    "diar": {
+      "ready": true,
+      "models": {
+        "diarization": {
+          "ready": true,
+          "revision": "3533c8cf8e369892e6b79ff1bf80f7b0286a54ee"
+        }
+      },
+      "mode": "real",
+      "load_seconds": 3.5809836669941433
+    },
+    "vad": {
+      "ready": true,
+      "runtime": "onnx"
+    }
+  },
+  "state": "COMPLETED",
+  "session_id": "session_87ef25f5a3ca4273b735f820f40b9f74",
+  "metrics": {
+    "duration_seconds": 5.82025,
+    "source_channels": 1,
+    "downmixed": false,
+    "sample_rate": 16000,
+    "preprocess_seconds": 0.13450012501562014,
+    "asr_seconds": 1.5977332500042394,
+    "diar_seconds": 0.8892845000082161,
+    "merge_seconds": 0.0004924160020891577,
+    "total_seconds": 2.6274222920183092,
+    "rtf": 0.4514277379869094
+  },
+  "speakers": {
+    "spk_01": "화자 A"
+  },
+  "utterances": [
+    {
+      "schema_version": 1,
+      "event_id": "evt_c5e367b656684b41aac89d020b936ccb",
+      "session_id": "session_87ef25f5a3ca4273b735f820f40b9f74",
+      "meeting_id": null,
+      "utterance_id": "utt_bc4fe1644e814905852efcccea8a1327",
+      "revision": 2,
+      "speaker_id": "spk_01",
+      "speaker_status": "assigned",
+      "start_ms": 0,
+      "end_ms": 5320,
+      "text": "오늘은 로그인 기능을 확인하겠습니다. 개포 일정은 금요일입니다. 네 알겠습니다.",
+      "status": "stable",
+      "source": "audio",
+      "input_mode": "file",
+      "addressed_to_ai": false,
+      "overlap": false,
+      "manual_fields": [],
+      "replaces_utterance_ids": [],
+      "changed_fields": [
+        "speaker_id",
+        "speaker_status"
+      ]
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-09-19T04:56:15.978765+00:00",
+  "target": "http://127.0.0.1:8765/",
+  "environment": "installed local STT UI with connected RAG service",
+  "browser": "Google Chrome headless via Playwright",
+  "viewport": {
+    "width": 1440,
+    "height": 1040
+  },
+  "authentication": {
+    "role": "superadmin",
+    "method": "existing application session credential, memory only",
+    "credential_recorded": false
+  },
+  "read_only": true,
+  "checks": {
+    "workspace_options_present": true,
+    "workspace_options_count_at_final_check": 3,
+    "workspace_switch_and_restore_with_policy_get_200": true,
+    "priority_response_target_seconds": 20,
+    "superadmin_filter_model_field_editable": true,
+    "filter_model_empty_uses_default": true,
+    "untouched_policy_save_button_disabled": true,
+    "file_assistant_in_right_column": true,
+    "live_assistant_in_right_column": true,
+    "workspace_selection_preserved_when_switching_view": true,
+    "live_review_inactive": true,
+    "review_start_available": true,
+    "policy_error_count": 0,
+    "javascript_error_count": 0,
+    "api_http_error_count": 0,
+    "non_telemetry_mutation_attempts": 0,
+    "telemetry_intercepted_locally": true,
+    "credentials_absent_from_logs_and_screenshots": true
+  },
+  "screenshots": [
+    "/tmp/meeting-priority-installed-file.png",
+    "/tmp/meeting-priority-installed-live.png"
+  ],
+  "reproduction_script": "/tmp/meeting-priority-installed-check.mjs",
+  "not_exercised": [
+    "audio recording or file upload",
+    "subscription activation",
+    "policy mutation",
+    "live LLM result generation"
+  ],
+  "runtime_ui_changes_required": false,
+  "test_fixture_update": "filter_timeout_seconds default fixture changed from 4 to 8; UI consumes server policy and has no timeout default fallback",
+  "verification": {
+    "vitest_files_passed": 11,
+    "vitest_tests_passed": 51,
+    "production_build": "passed before instruction to skip redundant rebuild arrived; runtime asset hashes unchanged"
+  },
+  "cleanup": {
+    "development_server_port_5192_stopped": true,
+    "owned_test_browser_contexts_closed": true
+  }
+}

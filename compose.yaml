@@ -1,0 +1,17 @@
+services:
+  meetingbot:
+    build: .
+    ports:
+      - "127.0.0.1:8765:8765"
+    volumes:
+      - meetingbot-data:/data
+    restart: unless-stopped
+    stop_grace_period: 45s
+    healthcheck:
+      test: ["CMD", "/app/backend/.venv/bin/python", "-c", "import socket; socket.create_connection(('127.0.0.1',8765),3).close(); socket.create_connection(('127.0.0.1',8766),3).close()"]
+      interval: 30s
+      timeout: 5s
+      start_period: 120s
+      retries: 3
+volumes:
+  meetingbot-data:

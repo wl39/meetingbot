@@ -1,0 +1,25 @@
+sequenceDiagram
+    actor U as 회의 참여자
+    participant F as 필터 LLM
+    participant S as 서버 스케줄러
+    participant Q as 공유 슬롯 / SQ
+    participant P as PQ 전용 슬롯
+    participant UI as 결과 화면
+    U->>F: 저희 로그 이야기해야 해요
+    F->>S: 3점 · 업무 주제
+    S->>Q: SQ 검색 단계 시작
+    U->>F: AI야, 운영 로그 보관일 알려줘
+    F->>S: 5점 · PQ, t0부터 N초
+    S->>P: 예약 용량에서 즉시 실행 시도
+    alt PQ deadline 위험 감지
+        S->>Q: 새 단계 중단·checkpoint 유지
+        Note over S,P: 가능한 공유 용량도 PQ에 배정
+    end
+    alt N초 안에 검증 완료
+        P->>UI: 근거 답변 저장·표시
+    else N초까지 미완료
+        S->>UI: 독립 타이머로 지연 알림
+        P->>UI: 나중에 완료되면 같은 작업 결과 갱신
+    end
+    S->>Q: 부하 회복 후 기존 SQ 재개
+    Q->>UI: 관련 자료 결과 저장·표시

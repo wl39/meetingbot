@@ -1,0 +1,25 @@
+{
+  "fixture": "Yuna Korean synthetic speech, one speaker; not a real meeting benchmark",
+  "network": "OS sandbox deny network",
+  "model": {
+    "repo": "pyannote/speaker-diarization-community-1",
+    "path": "/YOUR_HOME/.cache/huggingface/hub/models--pyannote--speaker-diarization-community-1/snapshots/3533c8cf8e369892e6b79ff1bf80f7b0286a54ee",
+    "revision": "3533c8cf8e369892e6b79ff1bf80f7b0286a54ee"
+  },
+  "load_seconds": 16.389577666996047,
+  "inference_seconds": 0.6894842920009978,
+  "audio": {
+    "duration_seconds": 5.82025,
+    "source_channels": 1,
+    "downmixed": false,
+    "sample_rate": 16000
+  },
+  "turns": [
+    {
+      "start": 0.03096875,
+      "end": 5.835968750000001,
+      "speaker": "SPEAKER_00"
+    }
+  ],
+  "overlaps": []
+}

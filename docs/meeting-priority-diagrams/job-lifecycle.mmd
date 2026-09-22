@@ -1,0 +1,13 @@
+stateDiagram-v2
+    [*] --> QUEUED
+    QUEUED --> RUNNING: 원자적 claim·lease
+    RUNNING --> PAUSED: SQ 보호 모드·단계 경계 저장
+    PAUSED --> QUEUED: 여유 회복
+    RUNNING --> RETRY_WAIT: 일시 오류·재시도 예산 있음
+    RETRY_WAIT --> QUEUED: retry 시각 도달
+    RUNNING --> COMPLETED: 결과 검증·원자적 저장
+    RUNNING --> NEEDS_ATTENTION: 영구 오류 또는 시도 소진
+    QUEUED --> SUPERSEDED: 원문·문맥 변경
+    RUNNING --> SUPERSEDED: 오래된 결과 commit 차단
+    PAUSED --> CANCELLED: 명시 취소·권한 철회
+    COMPLETED --> [*]

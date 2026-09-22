@@ -1,0 +1,7 @@
+# Use a domain controlled by the operator; point DNS to this host first.
+# Configure RAG_ACCESS_MODE=remote, RAG_PUBLIC_ORIGIN=https://rag.example.com
+# and matching RAG_ALLOWED_HOSTS/RAG_ORIGINS. Backend stays loopback-only.
+rag.example.com {
+    reverse_proxy 127.0.0.1:8766
+    # No file_server or document directory route. No request logging.
+}

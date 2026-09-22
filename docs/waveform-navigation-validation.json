@@ -1,0 +1,9 @@
+{
+  "checks": [
+    "Playback marker and time remain at the actual playhead while range thumb browses elsewhere",
+    "Inner scrollbar hidden without losing horizontal drag or wheel scrolling",
+    "Marker follows resumed playback and aligns with the exploration thumb on return",
+    "Start/end marker and time labels stay aligned and visible on desktop and mobile"
+  ],
+  "errors": []
+}

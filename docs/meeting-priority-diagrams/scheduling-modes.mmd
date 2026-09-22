@@ -1,0 +1,9 @@
+stateDiagram-v2
+    [*] --> NORMAL
+    NORMAL --> PRESSURED: age 비율 0.5 이상
+    NORMAL --> PQ_ONLY: 예상 deadline 실패
+    PRESSURED --> PQ_ONLY: age 비율 0.8 이상 또는 실패 예상
+    PRESSURED --> RECOVERY: age 비율 0.4 미만·위험 없음 3초
+    PQ_ONLY --> RECOVERY: age 비율 0.4 미만·위험 없음 3초
+    RECOVERY --> NORMAL: 오래된 SQ부터 재개
+    RECOVERY --> PQ_ONLY: PQ 위험 재발

@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-09-19T04:57:51.034249+00:00",
+  "automated": {
+    "rag_tests_passed": 284,
+    "stt_tests_passed": 207,
+    "frontend_tests_passed": 51,
+    "total": 542,
+    "ruff": "passed",
+    "frontend_build": "passed"
+  },
+  "deployed_source_matches": {
+    "rag/meetingbot_rag/meeting_jobs.py": true,
+    "rag/meetingbot_rag/meeting_classifier.py": true,
+    "rag/meetingbot_rag/meeting_policy.py": true,
+    "backend/app/modules/meeting/subscriptions.py": true,
+    "frontend/dist/index.html": true
+  },
+  "rag_schema_version": 6,
+  "live_report": "meeting-priority-live-results.json",
+  "live_llm_cases_passed": 7,
+  "synthetic_workspace_removed": true,
+  "global_llm_settings_unchanged": true,
+  "limitations": [
+    "Seven synthetic live cases are not production accuracy or load benchmarks.",
+    "An independent deadline indicator is not a guarantee of a completed answer within N seconds.",
+    "SQ completion requires available capacity and recovery from provider failures."
+  ],
+  "ui_report": "meeting-priority-ui-validation.json"
+}

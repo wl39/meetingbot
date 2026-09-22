@@ -1,0 +1,7 @@
+[
+ {"workspace":"project-a","query":"로그 보관 기간은 얼마인가요?","path":"logs.md","contains":"90일"},
+ {"workspace":"project-b","query":"로그는 며칠간 보관하나요?","path":"logs.md","contains":"30일"},
+ {"workspace":"project-a","query":"로그보관기간","path":"logs.md","contains":"90일"},
+ {"workspace":"project-b","query":"MEET-B30","path":"logs.md","contains":"MEET-B30"},
+ {"workspace":"project-a","query":"retention.csv 운영 로그","path":"retention.csv","contains":"90"}
+]

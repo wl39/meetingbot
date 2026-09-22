@@ -1,0 +1,16 @@
+{
+  "deployed_at": "2026-09-12T07:42:11.684518+00:00",
+  "static_only": true,
+  "server_restarted": false,
+  "pid_unchanged": true,
+  "session_count": 10,
+  "utterance_count": 1522,
+  "existing_sessions_preserved": true,
+  "backup_directory": "/YOUR_HOME/Library/Application Support/Meetingbot/.runtime/word-seek-backups/20260912T074211Z",
+  "deployed_ui_verified": true,
+  "verified_url": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net/",
+  "frontend_tests": 41,
+  "backend_tests": 90,
+  "rag_tests": 116,
+  "ui_verification": "Synthetic audio and intercepted APIs in Chrome: word clicks in both views, seeking while playing, repeated/estimated seeks, Enter/Space, mobile tap, disabled states, block playback and layout passed."
+}

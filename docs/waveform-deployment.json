@@ -1,0 +1,14 @@
+{
+  "deployed_at": "2026-09-09T05:24:10.202627+00:00",
+  "url": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net/",
+  "static_only": true,
+  "server_restarted": false,
+  "pid_unchanged": true,
+  "previous_transcript_utterances": 483,
+  "previous_transcript_preserved": true,
+  "assets": [
+    "/assets/index-DzdjSJIz.js",
+    "/assets/index-DmxGlMQD.css",
+    "/assets/waveform.worker-C4BbRaKX.js"
+  ]
+}

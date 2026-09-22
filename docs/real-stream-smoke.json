@@ -1,0 +1,50 @@
+{
+  "fixture": "Paced 44.1kHz PCM from synthetic Korean audio; no hardware microphone",
+  "session_id": "session_86a03c14426542a39497a5d3c5ab2afa",
+  "state": "PARTIAL",
+  "metrics": {
+    "processed_audio_ms": 5820,
+    "audio_backlog_ms": 0,
+    "asr_wall_seconds": 0.6692076250037644,
+    "asr_inference_seconds": 0.6669910829805303,
+    "retained_pcm_bytes": 19264000,
+    "audio_input_ms": 5820,
+    "first_caption_seconds": 3.4905023330065887,
+    "first_stable_seconds": 3.490504916990176,
+    "total_seconds": 6.843298583000433
+  },
+  "had_partial_caption": true,
+  "final_text": "오늘은 로그인 확인하겠습니다. 배포 걱정은 금요일입니다. 네 알겠습니다.",
+  "utterances": [
+    {
+      "schema_version": 1,
+      "event_id": "evt_2ff0de5fb3de4bf89bd3c02bcbf21fa5",
+      "session_id": "session_86a03c14426542a39497a5d3c5ab2afa",
+      "meeting_id": null,
+      "utterance_id": "utt_f29f693ae9df42fba09bd8414b868224",
+      "revision": 1,
+      "speaker_id": null,
+      "speaker_status": "unknown",
+      "start_ms": 0,
+      "end_ms": 5315,
+      "text": "오늘은 로그인 확인하겠습니다. 배포 걱정은 금요일입니다. 네 알겠습니다.",
+      "status": "stable",
+      "source": "audio",
+      "input_mode": "microphone",
+      "addressed_to_ai": false,
+      "overlap": false,
+      "manual_fields": [],
+      "replaces_utterance_ids": [
+        "utt_1029c09c2c9c420882235d1f465f81be",
+        "utt_a395e46719ec4d92ab7c88d02a191792"
+      ],
+      "changed_fields": []
+    }
+  ],
+  "warnings": [
+    {
+      "type": "diarization.failed",
+      "code": "RuntimeError"
+    }
+  ]
+}

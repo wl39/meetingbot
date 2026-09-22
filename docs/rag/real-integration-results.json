@@ -1,0 +1,464 @@
+{
+  "origin": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net:8443",
+  "network_scope": "server host through Tailscale Serve HTTPS (not a second remote device)",
+  "checks": [
+    "production web served over TLS",
+    "unauthenticated roots denied",
+    "HTTPS administrator login",
+    "Secure HttpOnly session",
+    "CSRF enforced over HTTPS",
+    "foreign Origin denied over HTTPS",
+    "real multilingual E5 model ready",
+    "persistent index job sample-project-a",
+    "real index READY sample-project-a None",
+    "persistent index job sample-project-b",
+    "real index READY sample-project-b None",
+    "search 로그 보관 기간은 얼마인가요?",
+    "expected Korean evidence project-a 로그 보관 기간은 얼마인가요?",
+    "workspace scoped evidence",
+    "versioned source snapshot",
+    "search 로그는 며칠간 보관하나요?",
+    "expected Korean evidence project-b 로그는 며칠간 보관하나요?",
+    "workspace scoped evidence",
+    "versioned source snapshot",
+    "search 로그보관기간",
+    "expected Korean evidence project-a 로그보관기간",
+    "workspace scoped evidence",
+    "versioned source snapshot",
+    "search MEET-B30",
+    "expected Korean evidence project-b MEET-B30",
+    "workspace scoped evidence",
+    "versioned source snapshot",
+    "search retention.csv 운영 로그",
+    "expected Korean evidence project-a retention.csv 운영 로그",
+    "workspace scoped evidence",
+    "versioned source snapshot",
+    "cross workspace source lookup denied",
+    "unapproved external LLM disabled, local evidence retained",
+    "unchanged real documents reuse embeddings",
+    "local and HTTPS see identical persisted workspace IDs"
+  ],
+  "jobs": [
+    {
+      "workspace": "sample-project-a",
+      "revision_id": "1b5eaee8f41a4471a506dd10a369b8ae",
+      "result": {
+        "stage": "READY",
+        "queue_ms": 1,
+        "files": [
+          {
+            "relative_path": "costs.xlsx",
+            "bytes": 5084,
+            "state": "PROCESSED",
+            "reason": null,
+            "document_version_id": "8ab824bf252d43f083235d56871e3088",
+            "reused": true
+          },
+          {
+            "relative_path": "logs.md",
+            "bytes": 304,
+            "state": "PROCESSED",
+            "reason": null,
+            "document_version_id": "ea190e2aa1244262979a065ece29fe77",
+            "reused": true
+          },
+          {
+            "relative_path": "retention.csv",
+            "bytes": 124,
+            "state": "PROCESSED",
+            "reason": null,
+            "document_version_id": "783d19d0fd6b468eb94b8eee48a4bb07",
+            "reused": true
+          },
+          {
+            "relative_path": "readme.txt",
+            "bytes": 116,
+            "state": "PROCESSED",
+            "reason": null,
+            "document_version_id": "f3c9700784b8437a974db54878104471",
+            "reused": true
+          }
+        ],
+        "total_bytes": 5628,
+        "scanned": 4,
+        "scan_ms": 10,
+        "workspace_id": "5c090ee510554e3cbeca2badd2589b0d",
+        "revision_id": "1b5eaee8f41a4471a506dd10a369b8ae",
+        "documents": [
+          {
+            "document_id": "9a761d7368584efbb1cb89e1bffa4fe3",
+            "document_version_id": "8ab824bf252d43f083235d56871e3088",
+            "relative_path": "costs.xlsx",
+            "content_hash": "36aa355627467e1f9763392f94794d853bdf483f57f9fb2e2362b958e656ba37",
+            "chunks": 1
+          },
+          {
+            "document_id": "26515122d8984875b00a47595320cec9",
+            "document_version_id": "ea190e2aa1244262979a065ece29fe77",
+            "relative_path": "logs.md",
+            "content_hash": "3c162bd8f69560312a813ed96a9888d381b04ece5ea85663399b173a9dbca173",
+            "chunks": 3
+          },
+          {
+            "document_id": "c3cc4d2134684897820344e49c54611e",
+            "document_version_id": "783d19d0fd6b468eb94b8eee48a4bb07",
+            "relative_path": "retention.csv",
+            "content_hash": "24bc590d593e4416529c92790404d4490abff867a664f549f2d1b438f9cd1cc0",
+            "chunks": 2
+          },
+          {
+            "document_id": "a880287e7b2844ceb9602efd55c5d152",
+            "document_version_id": "f3c9700784b8437a974db54878104471",
+            "relative_path": "readme.txt",
+            "content_hash": "dde3d8c1b14f8944d312ff74dfa8a72b7eb756fb08024759b4eba3939067957a",
+            "chunks": 1
+          }
+        ],
+        "chunks": 7,
+        "reused_documents": 4,
+        "embedded_chunks": 0,
+        "config": {
+          "embedding_model": "intfloat/multilingual-e5-small",
+          "embedding_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "chunk_tokens": 320,
+          "overlap_tokens": 48,
+          "encodings": [
+            "utf-8-sig"
+          ],
+          "include_hidden": false,
+          "max_rows": 20000,
+          "max_columns": 100,
+          "max_cells": 200000,
+          "parser": "3",
+          "chunker": "4",
+          "normalize": true,
+          "dimension": 384,
+          "query_template": "query: {text}",
+          "passage_template": "passage: {text}"
+        },
+        "timings_ms": {
+          "parse": 0,
+          "chunk": 0,
+          "embedding": 0
+        },
+        "total_ms": 54
+      },
+      "wall_seconds": 0.533
+    },
+    {
+      "workspace": "sample-project-b",
+      "revision_id": "2d3992b72fd140dd8106d2853d4dcb8f",
+      "result": {
+        "stage": "READY",
+        "queue_ms": 2,
+        "files": [
+          {
+            "relative_path": "logs.md",
+            "bytes": 304,
+            "state": "PROCESSED",
+            "reason": null,
+            "document_version_id": "b47d7051489e4ffa8bddc0ec04b169a5",
+            "reused": true
+          },
+          {
+            "relative_path": "retention.tsv",
+            "bytes": 87,
+            "state": "PROCESSED",
+            "reason": null,
+            "document_version_id": "da281c4d6db24a6e8a9c1ac99d8a63b8",
+            "reused": true
+          },
+          {
+            "relative_path": "readme.txt",
+            "bytes": 116,
+            "state": "PROCESSED",
+            "reason": null,
+            "document_version_id": "b1f570844d17425da5718387c0a5e8aa",
+            "reused": true
+          }
+        ],
+        "total_bytes": 507,
+        "scanned": 3,
+        "scan_ms": 14,
+        "workspace_id": "645be06a60a44ef88f11e7edcba595cf",
+        "revision_id": "2d3992b72fd140dd8106d2853d4dcb8f",
+        "documents": [
+          {
+            "document_id": "d69f24903f0047a888c19823638df3ab",
+            "document_version_id": "b47d7051489e4ffa8bddc0ec04b169a5",
+            "relative_path": "logs.md",
+            "content_hash": "0228e09f4ee0431e650a03099fe7997cc4a44a68fa8a4acc6825fb5a87ab0793",
+            "chunks": 3
+          },
+          {
+            "document_id": "18945f1c190243758920781cdd2307fc",
+            "document_version_id": "da281c4d6db24a6e8a9c1ac99d8a63b8",
+            "relative_path": "retention.tsv",
+            "content_hash": "77b5301e7eef6493bdb406ce4cdc5bddd48dc0add890414425f6c2070310806c",
+            "chunks": 2
+          },
+          {
+            "document_id": "6d748f5f79554948801c73ec469db942",
+            "document_version_id": "b1f570844d17425da5718387c0a5e8aa",
+            "relative_path": "readme.txt",
+            "content_hash": "746d59025233e47f94fe4af1af6868098cccca2b18d7a3cd8ab4908c99465783",
+            "chunks": 1
+          }
+        ],
+        "chunks": 6,
+        "reused_documents": 3,
+        "embedded_chunks": 0,
+        "config": {
+          "embedding_model": "intfloat/multilingual-e5-small",
+          "embedding_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+          "chunk_tokens": 320,
+          "overlap_tokens": 48,
+          "encodings": [
+            "utf-8-sig"
+          ],
+          "include_hidden": false,
+          "max_rows": 20000,
+          "max_columns": 100,
+          "max_cells": 200000,
+          "parser": "3",
+          "chunker": "4",
+          "normalize": true,
+          "dimension": 384,
+          "query_template": "query: {text}",
+          "passage_template": "passage: {text}"
+        },
+        "timings_ms": {
+          "parse": 0,
+          "chunk": 0,
+          "embedding": 0
+        },
+        "total_ms": 59
+      },
+      "wall_seconds": 0.52
+    }
+  ],
+  "evaluation": [
+    {
+      "query": "로그 보관 기간은 얼마인가요?",
+      "workspace": "project-a",
+      "evidence": {
+        "chunk_id": "2c65b885fa72437393fa96f9f80a4f2e",
+        "text": "## 로그 보관\n운영 환경의 로그 보관 기간은 90일입니다.\n보관 기간이 지난 로그는 다음 날 정리합니다.\n",
+        "title_path": [
+          "프로젝트 A 운영 정책",
+          "로그 보관"
+        ],
+        "location": {
+          "type": "text",
+          "start_line": 3,
+          "end_line": 5,
+          "char_start": 0,
+          "char_end": 60
+        },
+        "evidence_id": "1b5eaee8f41a4471a506dd10a369b8ae.2c65b885fa72437393fa96f9f80a4f2e",
+        "workspace_id": "5c090ee510554e3cbeca2badd2589b0d",
+        "revision_id": "1b5eaee8f41a4471a506dd10a369b8ae",
+        "document_id": "26515122d8984875b00a47595320cec9",
+        "document_version_id": "ea190e2aa1244262979a065ece29fe77",
+        "relative_path": "logs.md"
+      },
+      "timings_ms": {
+        "query_embedding": 61,
+        "retrieval": 3
+      }
+    },
+    {
+      "query": "로그는 며칠간 보관하나요?",
+      "workspace": "project-b",
+      "evidence": {
+        "chunk_id": "91373f38dc2f47a5bbb2d910c9ecba35",
+        "text": "## 로그 보관\n운영 환경의 로그 보관 기간은 30일입니다.\n보관 기간이 지난 로그는 다음 날 정리합니다.\n",
+        "title_path": [
+          "프로젝트 B 운영 정책",
+          "로그 보관"
+        ],
+        "location": {
+          "type": "text",
+          "start_line": 3,
+          "end_line": 5,
+          "char_start": 0,
+          "char_end": 60
+        },
+        "evidence_id": "2d3992b72fd140dd8106d2853d4dcb8f.91373f38dc2f47a5bbb2d910c9ecba35",
+        "workspace_id": "645be06a60a44ef88f11e7edcba595cf",
+        "revision_id": "2d3992b72fd140dd8106d2853d4dcb8f",
+        "document_id": "d69f24903f0047a888c19823638df3ab",
+        "document_version_id": "b47d7051489e4ffa8bddc0ec04b169a5",
+        "relative_path": "logs.md"
+      },
+      "timings_ms": {
+        "query_embedding": 18,
+        "retrieval": 3
+      }
+    },
+    {
+      "query": "로그보관기간",
+      "workspace": "project-a",
+      "evidence": {
+        "chunk_id": "2c65b885fa72437393fa96f9f80a4f2e",
+        "text": "## 로그 보관\n운영 환경의 로그 보관 기간은 90일입니다.\n보관 기간이 지난 로그는 다음 날 정리합니다.\n",
+        "title_path": [
+          "프로젝트 A 운영 정책",
+          "로그 보관"
+        ],
+        "location": {
+          "type": "text",
+          "start_line": 3,
+          "end_line": 5,
+          "char_start": 0,
+          "char_end": 60
+        },
+        "evidence_id": "1b5eaee8f41a4471a506dd10a369b8ae.2c65b885fa72437393fa96f9f80a4f2e",
+        "workspace_id": "5c090ee510554e3cbeca2badd2589b0d",
+        "revision_id": "1b5eaee8f41a4471a506dd10a369b8ae",
+        "document_id": "26515122d8984875b00a47595320cec9",
+        "document_version_id": "ea190e2aa1244262979a065ece29fe77",
+        "relative_path": "logs.md"
+      },
+      "timings_ms": {
+        "query_embedding": 19,
+        "retrieval": 2
+      }
+    },
+    {
+      "query": "MEET-B30",
+      "workspace": "project-b",
+      "evidence": {
+        "chunk_id": "ca1bdce8048a4381a127c274390bb431",
+        "text": "## 장애 대응\n긴급 장애는 프로젝트 B 운영 담당자가 확인합니다.\n프로젝트 식별 코드는 MEET-B30입니다.",
+        "title_path": [
+          "프로젝트 B 운영 정책",
+          "장애 대응"
+        ],
+        "location": {
+          "type": "text",
+          "start_line": 7,
+          "end_line": 9,
+          "char_start": 0,
+          "char_end": 62
+        },
+        "evidence_id": "2d3992b72fd140dd8106d2853d4dcb8f.ca1bdce8048a4381a127c274390bb431",
+        "workspace_id": "645be06a60a44ef88f11e7edcba595cf",
+        "revision_id": "2d3992b72fd140dd8106d2853d4dcb8f",
+        "document_id": "d69f24903f0047a888c19823638df3ab",
+        "document_version_id": "b47d7051489e4ffa8bddc0ec04b169a5",
+        "relative_path": "logs.md"
+      },
+      "timings_ms": {
+        "query_embedding": 19,
+        "retrieval": 3
+      }
+    },
+    {
+      "query": "retention.csv 운영 로그",
+      "workspace": "project-a",
+      "evidence": {
+        "chunk_id": "1827346393d54de2935d404f5e106e74",
+        "text": "정책 ID: 001 | 대상: 운영 로그 | 보관 기간: 90 | 단위: 일 | 비용: 0 | 비고: ",
+        "title_path": [
+          "표"
+        ],
+        "location": {
+          "type": "table",
+          "sheet": "표",
+          "header_row": 1,
+          "start_row": 2,
+          "end_row": 2,
+          "cell_range": "A2:F2",
+          "char_start": 0,
+          "char_end": 57
+        },
+        "table": {
+          "headers": [
+            "정책 ID",
+            "대상",
+            "보관 기간",
+            "단위",
+            "비용",
+            "비고"
+          ],
+          "cells": [
+            {
+              "address": "A2",
+              "value": "001",
+              "type": "string",
+              "formula": null
+            },
+            {
+              "address": "B2",
+              "value": "운영 로그",
+              "type": "string",
+              "formula": null
+            },
+            {
+              "address": "C2",
+              "value": "90",
+              "type": "string",
+              "formula": null
+            },
+            {
+              "address": "D2",
+              "value": "일",
+              "type": "string",
+              "formula": null
+            },
+            {
+              "address": "E2",
+              "value": "0",
+              "type": "string",
+              "formula": null
+            },
+            {
+              "address": "F2",
+              "value": "",
+              "type": "string",
+              "formula": null
+            }
+          ],
+          "merged_ranges": []
+        },
+        "evidence_id": "1b5eaee8f41a4471a506dd10a369b8ae.1827346393d54de2935d404f5e106e74",
+        "workspace_id": "5c090ee510554e3cbeca2badd2589b0d",
+        "revision_id": "1b5eaee8f41a4471a506dd10a369b8ae",
+        "document_id": "c3cc4d2134684897820344e49c54611e",
+        "document_version_id": "783d19d0fd6b468eb94b8eee48a4bb07",
+        "relative_path": "retention.csv"
+      },
+      "timings_ms": {
+        "query_embedding": 22,
+        "retrieval": 3
+      }
+    }
+  ],
+  "model": {
+    "state": "READY",
+    "error_code": null,
+    "model": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "device": "mps",
+    "dimension": 384,
+    "max_tokens": 512,
+    "normalized": true,
+    "encoded_passages": 20
+  },
+  "llm": {
+    "configured": false,
+    "models_ok": false,
+    "completion_ok": false,
+    "error_code": "PROXY_NOT_CONFIGURED"
+  },
+  "incremental": {
+    "before_encoded": 20,
+    "after_encoded": 20,
+    "reused_documents": 4
+  },
+  "workspace_ids": {
+    "project-a": "5c090ee510554e3cbeca2badd2589b0d",
+    "project-b": "645be06a60a44ef88f11e7edcba595cf"
+  }
+}

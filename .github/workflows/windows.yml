@@ -1,0 +1,67 @@
+name: Windows native install
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 40
+    env:
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: utf-8
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+      PYANNOTE_METRICS_ENABLED: "0"
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: meetingbot 한글
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: meetingbot 한글
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          architecture: x64
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Prepare FFmpeg
+        run: |
+          choco install ffmpeg --yes --no-progress
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          ffmpeg -version
+          ffprobe -version
+      - name: Native installer in a path containing spaces and Korean
+        shell: powershell
+        run: |
+          & .\scripts\install-windows.ps1 -NoLaunch
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          if (-not (Test-Path .\Meetingbot.cmd)) { throw 'Launcher was not generated' }
+      - name: Add test tools without changing the runtime dependency selection
+        run: |
+          python -m pip install "uv>=0.8,<1"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          uv sync --project backend --locked --extra speech
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          uv sync --project rag --locked
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: STT, launcher and installer regression tests
+        run: |
+          & .\backend\.venv\Scripts\python.exe -m pytest -c backend/pyproject.toml backend/tests scripts/tests -q
+          exit $LASTEXITCODE
+      - name: RAG and native Windows filesystem tests
+        run: |
+          & .\rag\.venv\Scripts\python.exe -m pytest rag/tests -q
+          exit $LASTEXITCODE
+      - name: Frontend regression tests
+        run: |
+          npm test --prefix frontend
+          exit $LASTEXITCODE

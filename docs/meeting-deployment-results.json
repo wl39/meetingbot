@@ -1,0 +1,13 @@
+{
+  "/api/stt/health": 200,
+  "stt_ready": true,
+  "active_session": null,
+  "/api/stt/meeting/diagnostics": 200,
+  "rag_ready": true,
+  "llm_configured": true,
+  "/api/stt/meeting/workspaces": 200,
+  "current_build_8765": true,
+  "current_build_8766": true,
+  "source_matches_deployed_bridge": true,
+  "source_matches_deployed_pipeline": true
+}

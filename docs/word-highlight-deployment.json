@@ -1,0 +1,17 @@
+{
+  "deployed_at": "2026-09-12T07:12:48.477503+00:00",
+  "service_ready": true,
+  "session_count": 10,
+  "utterance_count": 1522,
+  "existing_sessions_preserved": true,
+  "backend_updated": [
+    "backend/app/contracts/utterance.py",
+    "backend/app/modules/stt/transcript_assembler.py",
+    "backend/app/modules/stt/repository.py"
+  ],
+  "frontend_destinations": 2,
+  "backup_directory": "/YOUR_HOME/Library/Application Support/Meetingbot/.runtime/word-highlight-backups/20260912T071239Z",
+  "deployed_ui_verified": true,
+  "verified_url": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net/",
+  "ui_verification": "Headless Chrome, synthetic audio, intercepted APIs; option, both views, word timing, pause, 2x, seeks, long-block scrolling and mobile layout passed."
+}

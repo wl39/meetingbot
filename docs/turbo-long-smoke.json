@@ -1,0 +1,45 @@
+{
+  "fixture_description": "Synthetic Korean speech plus silence, one speaker; not a real meeting accuracy benchmark",
+  "results": [
+    {
+      "fixture": "diagnostic-aac.m4a",
+      "state": "COMPLETED",
+      "warnings": [],
+      "metrics": {
+        "duration_seconds": 5.82025,
+        "transcribed_seconds": 5.82025,
+        "progress_percent": 100.0,
+        "source_channels": 2,
+        "downmixed": true,
+        "sample_rate": 16000,
+        "preprocess_seconds": 0.11428620899096131,
+        "asr_seconds": 4.466525499999989,
+        "diar_seconds": 1.1750459160248283,
+        "merge_seconds": 0.0004151250177528709,
+        "total_seconds": 5.771854708000319,
+        "rtf": 0.9916850149049129
+      },
+      "utterance_count": 1
+    },
+    {
+      "fixture": "diagnostic-11min.m4a",
+      "state": "COMPLETED",
+      "warnings": [],
+      "metrics": {
+        "duration_seconds": 660.0,
+        "transcribed_seconds": 660.0,
+        "progress_percent": 100.0,
+        "source_channels": 1,
+        "downmixed": false,
+        "sample_rate": 16000,
+        "preprocess_seconds": 0.32814370800042525,
+        "asr_seconds": 82.84601345899864,
+        "diar_seconds": 710.1003971660102,
+        "merge_seconds": 0.006375625001965091,
+        "total_seconds": 793.4275537500216,
+        "rtf": 1.2021629602273054
+      },
+      "utterance_count": 34
+    }
+  ]
+}

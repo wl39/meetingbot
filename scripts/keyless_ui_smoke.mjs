@@ -1,0 +1,51 @@
+/** Run against isolated fake STT/RAG services with a shared access database. */
+import { chromium } from '../frontend/node_modules/playwright-core/index.mjs';
+import { readFile, mkdir } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const origin = process.env.KEYLESS_QA_URL || 'http://127.0.0.1:8895';
+const data = process.env.KEYLESS_QA_DATA || '/tmp/meetingbot-keyless-qa';
+const browser = await chromium.launch({ headless: true, executablePath: process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' });
+try {
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  const errors = [];
+  page.on('pageerror', e => errors.push(e.name));
+  await page.goto(origin);
+  await page.getByText('전사 준비 완료', { exact: true }).waitFor();
+  assert.equal(await page.getByRole('heading', { name: '워크스페이스에 로그인' }).count(), 0);
+  assert.equal(await page.getByRole('button', { name: '관리자 로그인', exact: true }).count(), 1);
+  const access = await (await context.request.get(origin + '/api/access/session')).json();
+  assert.equal(access.role, 'visitor');
+  assert.equal(access.demo, false);
+  assert.equal((await context.request.get(origin + '/api/system')).status(), 403);
+  await page.getByRole('button', { name: '자료 검색', exact: true }).click();
+  await page.getByRole('heading', { name: '자료 라이브러리', exact: true }).waitFor();
+  assert.equal((await context.request.get(origin + '/api/rag/workspaces')).status(), 200);
+  await page.getByRole('button', { name: '실시간 전사', exact: true }).click();
+  await page.getByRole('button', { name: '파일 전사', exact: true }).click();
+  await page.getByRole('button', { name: '관리자 로그인', exact: true }).click();
+  const key = (await readFile(data + '/stt/local-token', 'utf8')).trim();
+  await page.getByLabel('접속 키', { exact: true }).fill(key);
+  await page.getByRole('button', { name: '로그인', exact: true }).click();
+  await page.getByRole('button', { name: '설정 및 관리', exact: true }).click();
+  await page.getByRole('button', { name: /접속 및 권한/ }).click();
+  await page.getByRole('heading', { name: '접속 키와 권한' }).waitFor();
+  await page.getByRole('button', { name: '로그아웃', exact: true }).click();
+  await page.getByRole('button', { name: '파일 전사', exact: true }).click();
+  await page.getByText('전사 준비 완료', { exact: true }).waitFor();
+  await page.evaluate(() => sessionStorage.setItem('stt-token', 'expired-key'));
+  await page.reload();
+  await page.getByText('전사 준비 완료', { exact: true }).waitFor();
+  assert.equal(await page.evaluate(() => sessionStorage.getItem('stt-token')), null);
+  await page.waitForResponse(r => r.url().endsWith('/api/events') && r.status() === 202);
+  const raw = await readFile(data + '/stt/logs/events.jsonl', 'utf8');
+  const logs = raw.trim().split('\n').map(JSON.parse);
+  for (const name of ['browser.navigation', 'browser.click', 'browser.change', 'auth.session_created'])
+    assert.ok(logs.some(r => r.event === name), name);
+  assert.ok(logs.some(r => r.event === 'http.completed' && r.route === '/api/system' && r.status === 403));
+  assert.ok(!raw.includes(key));
+  await mkdir(data + '/screenshots', { recursive: true });
+  await page.screenshot({ path: data + '/screenshots/keyless.png', fullPage: true });
+  assert.deepEqual(errors, []);
+  console.log('PASS: keyless entry, RAG, role checks, administrator login/logout, stale-key recovery, browser logs, secret exclusion');
+} finally { await browser.close(); }

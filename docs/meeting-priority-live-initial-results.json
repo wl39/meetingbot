@@ -1,0 +1,832 @@
+{
+  "synthetic": true,
+  "live_llm": true,
+  "started_at": "2026-09-19T04:53:16.178602+00:00",
+  "passed": false,
+  "cases": [
+    {
+      "name": "filler",
+      "input": "어",
+      "context": [],
+      "expected_score": 1,
+      "expected_queue": null,
+      "passed": true,
+      "job_id": "c199f6e7488e40c58a2c8a3628c0322b",
+      "last_observation": {
+        "state": "COMPLETED",
+        "stage": "done",
+        "score": 1,
+        "queue_class": null,
+        "reason": "MEETING_TIMEOUT",
+        "deadline_missed": false
+      },
+      "score": 1,
+      "queue": null,
+      "state": "COMPLETED",
+      "status": "unsupported_action",
+      "reason": "MEETING_TIMEOUT",
+      "received_at": 1789793599.3659189,
+      "deadline_at": 1789793619.3659189,
+      "completed_at": 1789793609.5507042,
+      "deadline_missed": false,
+      "classification": {
+        "score": 1,
+        "classification_state": "resolved",
+        "scope": "out_of_scope",
+        "speech_act": "filler",
+        "addressed_to_ai": false,
+        "intent": "none",
+        "keywords": [],
+        "query": "",
+        "claim": "",
+        "reason_code": "FILLER",
+        "action_supported": false,
+        "model": "gpt-5.6-luna",
+        "settings_version": 5,
+        "context_omitted": false,
+        "timings_ms": {
+          "classification": 2881
+        }
+      },
+      "result": {
+        "workspace_id": "6cffbe12cef54e26ac75f9b77028b3c8",
+        "session_id": "synthetic-priority-4c397d545e79435690d3d1bf7e329f44",
+        "utterance_id": "synthetic-filler",
+        "utterance_revision": 1,
+        "revision_id": "91c58529eb0f4dfcb1d520b3039c3b0b",
+        "request_id": "c199f6e7488e40c58a2c8a3628c0322b",
+        "status": "unsupported_action",
+        "reason": "UNSUPPORTED_ACTION",
+        "message": "이 회의 도우미는 자료 조회만 지원합니다.",
+        "popup": null,
+        "evidence": [],
+        "timings_ms": {}
+      },
+      "elapsed_seconds": 10.212,
+      "checks": {
+        "completed": true,
+        "score": true,
+        "queue": true,
+        "observed_filter_model": true,
+        "deadline_is_20_seconds": true,
+        "classification_timing_recorded": true,
+        "no_rag_result": true
+      }
+    },
+    {
+      "name": "weather",
+      "input": "밖에 비 와요?",
+      "context": [],
+      "expected_score": 2,
+      "expected_queue": null,
+      "passed": true,
+      "job_id": "bbfd3c8495bd44758dba130e683ff0f4",
+      "last_observation": {
+        "state": "COMPLETED",
+        "stage": "done",
+        "score": 2,
+        "queue_class": null,
+        "reason": null,
+        "deadline_missed": false
+      },
+      "score": 2,
+      "queue": null,
+      "state": "COMPLETED",
+      "status": "unsupported_action",
+      "reason": null,
+      "received_at": 1789793609.5770829,
+      "deadline_at": 1789793629.5770829,
+      "completed_at": 1789793612.930784,
+      "deadline_missed": false,
+      "classification": {
+        "score": 2,
+        "classification_state": "resolved",
+        "scope": "out_of_scope",
+        "speech_act": "question",
+        "addressed_to_ai": false,
+        "intent": "none",
+        "keywords": [],
+        "query": "",
+        "claim": "",
+        "reason_code": "OUT_OF_SCOPE",
+        "action_supported": false,
+        "model": "gpt-5.6-luna",
+        "settings_version": 5,
+        "context_omitted": false,
+        "timings_ms": {
+          "classification": 3339
+        }
+      },
+      "result": {
+        "workspace_id": "6cffbe12cef54e26ac75f9b77028b3c8",
+        "session_id": "synthetic-priority-132cccc822cf499ca359a335a752fd27",
+        "utterance_id": "synthetic-weather",
+        "utterance_revision": 1,
+        "revision_id": "91c58529eb0f4dfcb1d520b3039c3b0b",
+        "request_id": "bbfd3c8495bd44758dba130e683ff0f4",
+        "status": "unsupported_action",
+        "reason": "UNSUPPORTED_ACTION",
+        "message": "이 회의 도우미는 자료 조회만 지원합니다.",
+        "popup": null,
+        "evidence": [],
+        "timings_ms": {}
+      },
+      "elapsed_seconds": 4.118,
+      "checks": {
+        "completed": true,
+        "score": true,
+        "queue": true,
+        "observed_filter_model": true,
+        "deadline_is_20_seconds": true,
+        "classification_timing_recorded": true,
+        "no_rag_result": true
+      }
+    },
+    {
+      "name": "topic",
+      "input": "저희 운영 로그 이야기해야 해요.",
+      "context": [
+        "지금부터 우리 서비스 운영 정책 회의를 시작합니다."
+      ],
+      "expected_score": 3,
+      "expected_queue": "SQ",
+      "passed": true,
+      "job_id": "515d5525eb4d49ecb5a50d038832b338",
+      "last_observation": {
+        "state": "COMPLETED",
+        "stage": "done",
+        "score": 3,
+        "queue_class": "SQ",
+        "reason": null,
+        "deadline_missed": false
+      },
+      "score": 3,
+      "queue": "SQ",
+      "state": "COMPLETED",
+      "status": "popup",
+      "reason": null,
+      "received_at": 1789793613.6924531,
+      "deadline_at": 1789793633.6924531,
+      "completed_at": 1789793631.069128,
+      "deadline_missed": false,
+      "classification": {
+        "score": 3,
+        "classification_state": "resolved",
+        "scope": "in_scope",
+        "speech_act": "topic",
+        "addressed_to_ai": false,
+        "intent": "context",
+        "keywords": [
+          "운영 로그"
+        ],
+        "query": "저희 운영 로그 이야기해야 해요.",
+        "claim": "",
+        "reason_code": "IN_SCOPE_TOPIC",
+        "action_supported": true,
+        "model": "gpt-5.6-luna",
+        "settings_version": 5,
+        "context_omitted": false,
+        "timings_ms": {
+          "classification": 3443
+        }
+      },
+      "result": {
+        "workspace_id": "6cffbe12cef54e26ac75f9b77028b3c8",
+        "session_id": "synthetic-priority-b9b15056ac8a453eb042cde5cb159245",
+        "utterance_id": "synthetic-topic",
+        "utterance_revision": 1,
+        "revision_id": "91c58529eb0f4dfcb1d520b3039c3b0b",
+        "request_id": "bf990b56f4244574a1632c9ebc61dda7",
+        "status": "popup",
+        "popup": {
+          "kind": "info",
+          "color": "blue",
+          "title": "운영 로그 논의 참고",
+          "message": "운영 로그는 중앙 로그 저장소에서 관리하며, 보관 기간은 운영서버 90일·개발서버 30일로 구분됩니다. 논의 시 대상 환경을 먼저 확인하세요.",
+          "confidence": 0.98,
+          "citations": [
+            "91c58529eb0f4dfcb1d520b3039c3b0b.22de9725a1494a138cabd529e540ad19"
+          ],
+          "id": "95cadd75cc855d8796f8e57ce7594c15"
+        },
+        "evidence": [
+          {
+            "chunk_id": "22de9725a1494a138cabd529e540ad19",
+            "text": "# 합성 검증 자료: 우리 서비스 운영 로그 정책\n우리 서비스의 운영서버 로그 보관 기간은 90일입니다.\n우리 서비스의 개발서버 로그 보관 기간은 30일입니다.\n운영 로그는 중앙 로그 저장소에서 관리합니다. 로그 보관 정책을 설명할 때 운영/개발 환경을 구분합니다.",
+            "title_path": [
+              "합성 검증 자료: 우리 서비스 운영 로그 정책"
+            ],
+            "location": {
+              "type": "text",
+              "start_line": 1,
+              "end_line": 4,
+              "char_start": 0,
+              "char_end": 148
+            },
+            "evidence_id": "91c58529eb0f4dfcb1d520b3039c3b0b.22de9725a1494a138cabd529e540ad19",
+            "workspace_id": "6cffbe12cef54e26ac75f9b77028b3c8",
+            "revision_id": "91c58529eb0f4dfcb1d520b3039c3b0b",
+            "document_id": "561ae285bfcc4e86b62296391078657e",
+            "document_version_id": "8cd644d1ad6943ffa6785e3b15c648c8",
+            "relative_path": "logs.md"
+          },
+          {
+            "chunk_id": "f248cb969b0b4966b75dd1eb2f4d9728",
+            "text": "# 합성 검증 자료: 우리 서비스 Docker 배포와 이미지 관리\n우리 서비스의 Docker 이미지는 사내 컨테이너 레지스트리에 저장합니다.\n이미지에는 배포 버전과 Git 커밋 해시를 태그로 붙입니다.\n운영에 배포 중인 이미지는 삭제하지 않습니다. 배포에 쓰이지 않는 이미지는 30일 후 정리합니다.\n개인 프로젝트의 이미지 관리는 우리 서비스 정책의 적용 대상이 아닙니다.",
+            "title_path": [
+              "합성 검증 자료: 우리 서비스 Docker 배포와 이미지 관리"
+            ],
+            "location": {
+              "type": "text",
+              "start_line": 1,
+              "end_line": 5,
+              "char_start": 0,
+              "char_end": 208
+            },
+            "evidence_id": "91c58529eb0f4dfcb1d520b3039c3b0b.f248cb969b0b4966b75dd1eb2f4d9728",
+            "workspace_id": "6cffbe12cef54e26ac75f9b77028b3c8",
+            "revision_id": "91c58529eb0f4dfcb1d520b3039c3b0b",
+            "document_id": "c98089047e4b49eebe7f79ab22ffcf62",
+            "document_version_id": "b5c23172e4e640ab967e5a957ee692f2",
+            "relative_path": "docker.md"
+          }
+        ],
+        "analysis": {
+          "keywords": [
+            "운영 로그"
+          ],
+          "query": "저희 운영 로그 이야기해야 해요.",
+          "intent": "context",
+          "claim": ""
+        },
+        "timings_ms": {
+          "extraction": 0,
+          "query_embedding": 740,
+          "retrieval": 11,
+          "generation": 7152,
+          "total": 7912
+        },
+        "guidance": {
+          "version": 0,
+          "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "included": false
+        },
+        "operating_prompt": {
+          "id": "2cccb7237a4b42faaa5024505bc0360a",
+          "version": 2,
+          "content_hash": "8f54fa9ad35f3ae591aefa6aab3d9e6dc83793dab0cc0a94b5ba87ec7e73cc29"
+        }
+      },
+      "elapsed_seconds": 17.572,
+      "checks": {
+        "completed": true,
+        "score": true,
+        "queue": true,
+        "observed_filter_model": true,
+        "deadline_is_20_seconds": true,
+        "classification_timing_recorded": true,
+        "grounded_result": true,
+        "rag_timing_recorded": true
+      }
+    },
+    {
+      "name": "log_claim",
+      "input": "우리 운영서버 로그 보관일은 45일이에요.",
+      "context": [
+        "우리 서비스 운영서버의 로그 보관 정책을 검토하고 있어요."
+      ],
+      "expected_score": 4,
+      "expected_queue": "PQ",
+      "passed": true,
+      "job_id": "03ab5406b47045218565d3cdab8221f9",
+      "last_observation": {
+        "state": "COMPLETED",
+        "stage": "done",
+        "score": 4,
+        "queue_class": "PQ",
+        "reason": null,
+        "deadline_missed": false
+      },
+      "score": 4,
+      "queue": "PQ",
+      "state": "COMPLETED",
+      "status": "popup",
+      "reason": null,
+      "received_at": 1789793631.273126,
+      "deadline_at": 1789793651.273126,
+      "completed_at": 1789793642.796906,
+      "deadline_missed": false,
+      "classification": {
+        "score": 4,
+        "classification_state": "resolved",
+        "scope": "in_scope",
+        "speech_act": "factual_claim",
+        "addressed_to_ai": false,
+        "intent": "fact_check",
+        "keywords": [
+          "운영서버 로그",
+          "보관일",
+          "로그 보관 정책"
+        ],
+        "query": "우리 운영서버 로그 보관일",
+        "claim": "우리 운영서버 로그 보관일은 45일이다",
+        "reason_code": "IN_SCOPE_CONCRETE_CLAIM",
+        "action_supported": true,
+        "model": "gpt-5.6-luna",
+        "settings_version": 5,
+        "context_omitted": false,
+        "timings_ms": {
+          "classification": 3674
+        }
+      },
+      "result": {
+        "workspace_id": "6cffbe12cef54e26ac75f9b77028b3c8",
+        "session_id": "synthetic-priority-64f967e205d34f78a3095e7e2195ab8d",
+        "utterance_id": "synthetic-log_claim",
+        "utterance_revision": 1,
+        "revision_id": "91c58529eb0f4dfcb1d520b3039c3b0b",
+        "request_id": "d1569966b8944144897af85339fbda60",
+        "status": "popup",
+        "popup": {
+          "kind": "warning",
+          "color": "red",
+          "title": "운영서버 로그 보관 기간 정정",
+          "message": "자료상 우리 서비스 운영서버 로그 보관 기간은 90일입니다. ‘45일’이라는 발언은 자료와 다르므로 정책 설정을 재확인하세요.",
+          "confidence": 0.99,
+          "citations": [
+            "91c58529eb0f4dfcb1d520b3039c3b0b.22de9725a1494a138cabd529e540ad19"
+          ],
+          "id": "edf5529127743c23c09e24d57d5471a0"
+        },
+        "evidence": [
+          {
+            "chunk_id": "22de9725a1494a138cabd529e540ad19",
+            "text": "# 합성 검증 자료: 우리 서비스 운영 로그 정책\n우리 서비스의 운영서버 로그 보관 기간은 90일입니다.\n우리 서비스의 개발서버 로그 보관 기간은 30일입니다.\n운영 로그는 중앙 로그 저장소에서 관리합니다. 로그 보관 정책을 설명할 때 운영/개발 환경을 구분합니다.",
+            "title_path": [
+              "합성 검증 자료: 우리 서비스 운영 로그 정책"
+            ],
+            "location": {
+              "type": "text",
+              "start_line": 1,
+              "end_line": 4,
+              "char_start": 0,
+              "char_end": 148
+            },
+            "evidence_id": "91c58529eb0f4dfcb1d520b3039c3b0b.22de9725a1494a138cabd529e540ad19",
+            "workspace_id": "6cffbe12cef54e26ac75f9b77028b3c8",
+            "revision_id": "91c58529eb0f4dfcb1d520b3039c3b0b",
+            "document_id": "561ae285bfcc4e86b62296391078657e",
+            "document_version_id": "8cd644d1ad6943ffa6785e3b15c648c8",
+            "relative_path": "logs.md"
+          },
+          {
+            "chunk_id": "f248cb969b0b4966b75dd1eb2f4d9728",
+            "text": "# 합성 검증 자료: 우리 서비스 Docker 배포와 이미지 관리\n우리 서비스의 Docker 이미지는 사내 컨테이너 레지스트리에 저장합니다.\n이미지에는 배포 버전과 Git 커밋 해시를 태그로 붙입니다.\n운영에 배포 중인 이미지는 삭제하지 않습니다. 배포에 쓰이지 않는 이미지는 30일 후 정리합니다.\n개인 프로젝트의 이미지 관리는 우리 서비스 정책의 적용 대상이 아닙니다.",
+            "title_path": [
+              "합성 검증 자료: 우리 서비스 Docker 배포와 이미지 관리"
+            ],
+            "location": {
+              "type": "text",
+              "start_line": 1,
+              "end_line": 5,
+              "char_start": 0,
+              "char_end": 208
+            },
+            "evidence_id": "91c58529eb0f4dfcb1d520b3039c3b0b.f248cb969b0b4966b75dd1eb2f4d9728",
+            "workspace_id": "6cffbe12cef54e26ac75f9b77028b3c8",
+            "revision_id": "91c58529eb0f4dfcb1d520b3039c3b0b",
+            "document_id": "c98089047e4b49eebe7f79ab22ffcf62",
+            "document_version_id": "b5c23172e4e640ab967e5a957ee692f2",
+            "relative_path": "docker.md"
+          }
+        ],
+        "analysis": {
+          "keywords": [
+            "운영서버 로그",
+            "보관일",
+            "로그 보관 정책"
+          ],
+          "query": "우리 운영서버 로그 보관일",
+          "intent": "fact_check",
+          "claim": "우리 운영서버 로그 보관일은 45일이다"
+        },
+        "timings_ms": {
+          "extraction": 0,
+          "query_embedding": 426,
+          "retrieval": 11,
+          "generation": 7374,
+          "total": 7820
+        },
+        "guidance": {
+          "version": 0,
+          "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "included": false
+        },
+        "operating_prompt": {
+          "id": "2cccb7237a4b42faaa5024505bc0360a",
+          "version": 2,
+          "content_hash": "8f54fa9ad35f3ae591aefa6aab3d9e6dc83793dab0cc0a94b5ba87ec7e73cc29"
+        }
+      },
+      "elapsed_seconds": 12.276,
+      "checks": {
+        "completed": true,
+        "score": true,
+        "queue": true,
+        "observed_filter_model": true,
+        "deadline_is_20_seconds": true,
+        "classification_timing_recorded": true,
+        "grounded_result": true,
+        "rag_timing_recorded": true,
+        "deadline_met": true
+      }
+    },
+    {
+      "name": "docker_service",
+      "input": "도커 이미지 관리 어떻게 하세요?",
+      "context": [
+        "우리 서비스의 운영 배포 과정에 관해 말씀드리고 있어요.",
+        "우리 운영 레지스트리 이야기입니다."
+      ],
+      "expected_score": 4,
+      "expected_queue": "PQ",
+      "passed": true,
+      "job_id": "4fc3082476a54b69a89c9f7c14c7f979",
+      "last_observation": {
+        "state": "COMPLETED",
+        "stage": "done",
+        "score": 4,
+        "queue_class": "PQ",
+        "reason": null,
+        "deadline_missed": false
+      },
+      "score": 4,
+      "queue": "PQ",
+      "state": "COMPLETED",
+      "status": "popup",
+      "reason": null,
+      "received_at": 1789793643.544563,
+      "deadline_at": 1789793663.544563,
+      "completed_at": 1789793661.1001642,
+      "deadline_missed": false,
+      "classification": {
+        "score": 4,
+        "classification_state": "resolved",
+        "scope": "in_scope",
+        "speech_act": "question",
+        "addressed_to_ai": false,
+        "intent": "practical_guidance",
+        "keywords": [
+          "도커 이미지 관리",
+          "운영 배포",
+          "운영 레지스트리"
+        ],
+        "query": "우리 서비스 운영 배포에서 도커 이미지는 어떻게 관리하나요?",
+        "claim": "",
+        "reason_code": "IN_SCOPE_OPERATIONAL_QUESTION",
+        "action_supported": true,
+        "model": "gpt-5.6-luna",
+        "settings_version": 5,
+        "context_omitted": false,
+        "timings_ms": {
+          "classification": 3917
+        }
+      },
+      "result": {
+        "workspace_id": "6cffbe12cef54e26ac75f9b77028b3c8",
+        "session_id": "synthetic-priority-d98e860553184a52b6df40c1a8aaa6b7",
+        "utterance_id": "synthetic-docker_service",
+        "utterance_revision": 1,
+        "revision_id": "91c58529eb0f4dfcb1d520b3039c3b0b",
+        "request_id": "d875c987c06c48dab37ef16ba54a4888",
+        "status": "popup",
+        "popup": {
+          "kind": "info",
+          "color": "blue",
+          "title": "운영 Docker 이미지 관리 기준",
+          "message": "운영 이미지는 사내 컨테이너 레지스트리에 저장하고, 배포 버전과 Git 커밋 해시를 태그로 붙입니다. 운영 배포 중인 이미지는 삭제하지 않으며, 배포에 사용되지 않는 이미지는 30일 후 정리합니다.",
+          "confidence": 0.98,
+          "citations": [
+            "91c58529eb0f4dfcb1d520b3039c3b0b.f248cb969b0b4966b75dd1eb2f4d9728"
+          ],
+          "id": "7153c5cd8adc7fee9dd0ca10acd0d5b9"
+        },
+        "evidence": [
+          {
+            "chunk_id": "f248cb969b0b4966b75dd1eb2f4d9728",
+            "text": "# 합성 검증 자료: 우리 서비스 Docker 배포와 이미지 관리\n우리 서비스의 Docker 이미지는 사내 컨테이너 레지스트리에 저장합니다.\n이미지에는 배포 버전과 Git 커밋 해시를 태그로 붙입니다.\n운영에 배포 중인 이미지는 삭제하지 않습니다. 배포에 쓰이지 않는 이미지는 30일 후 정리합니다.\n개인 프로젝트의 이미지 관리는 우리 서비스 정책의 적용 대상이 아닙니다.",
+            "title_path": [
+              "합성 검증 자료: 우리 서비스 Docker 배포와 이미지 관리"
+            ],
+            "location": {
+              "type": "text",
+              "start_line": 1,
+              "end_line": 5,
+              "char_start": 0,
+              "char_end": 208
+            },
+            "evidence_id": "91c58529eb0f4dfcb1d520b3039c3b0b.f248cb969b0b4966b75dd1eb2f4d9728",
+            "workspace_id": "6cffbe12cef54e26ac75f9b77028b3c8",
+            "revision_id": "91c58529eb0f4dfcb1d520b3039c3b0b",
+            "document_id": "c98089047e4b49eebe7f79ab22ffcf62",
+            "document_version_id": "b5c23172e4e640ab967e5a957ee692f2",
+            "relative_path": "docker.md"
+          },
+          {
+            "chunk_id": "22de9725a1494a138cabd529e540ad19",
+            "text": "# 합성 검증 자료: 우리 서비스 운영 로그 정책\n우리 서비스의 운영서버 로그 보관 기간은 90일입니다.\n우리 서비스의 개발서버 로그 보관 기간은 30일입니다.\n운영 로그는 중앙 로그 저장소에서 관리합니다. 로그 보관 정책을 설명할 때 운영/개발 환경을 구분합니다.",
+            "title_path": [
+              "합성 검증 자료: 우리 서비스 운영 로그 정책"
+            ],
+            "location": {
+              "type": "text",
+              "start_line": 1,
+              "end_line": 4,
+              "char_start": 0,
+              "char_end": 148
+            },
+            "evidence_id": "91c58529eb0f4dfcb1d520b3039c3b0b.22de9725a1494a138cabd529e540ad19",
+            "workspace_id": "6cffbe12cef54e26ac75f9b77028b3c8",
+            "revision_id": "91c58529eb0f4dfcb1d520b3039c3b0b",
+            "document_id": "561ae285bfcc4e86b62296391078657e",
+            "document_version_id": "8cd644d1ad6943ffa6785e3b15c648c8",
+            "relative_path": "logs.md"
+          }
+        ],
+        "analysis": {
+          "keywords": [
+            "도커 이미지 관리",
+            "운영 배포",
+            "운영 레지스트리"
+          ],
+          "query": "우리 서비스 운영 배포에서 도커 이미지는 어떻게 관리하나요?",
+          "intent": "practical_guidance",
+          "claim": ""
+        },
+        "timings_ms": {
+          "extraction": 0,
+          "query_embedding": 401,
+          "retrieval": 4,
+          "generation": 13199,
+          "total": 13612
+        },
+        "guidance": {
+          "version": 0,
+          "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "included": false
+        },
+        "operating_prompt": {
+          "id": "2cccb7237a4b42faaa5024505bc0360a",
+          "version": 2,
+          "content_hash": "8f54fa9ad35f3ae591aefa6aab3d9e6dc83793dab0cc0a94b5ba87ec7e73cc29"
+        }
+      },
+      "elapsed_seconds": 18.402,
+      "checks": {
+        "completed": true,
+        "score": true,
+        "queue": true,
+        "observed_filter_model": true,
+        "deadline_is_20_seconds": true,
+        "classification_timing_recorded": true,
+        "grounded_result": true,
+        "rag_timing_recorded": true,
+        "deadline_met": true
+      }
+    },
+    {
+      "name": "docker_personal",
+      "input": "도커 이미지 관리 어떻게 하세요?",
+      "context": [
+        "주말에 취미로 개인 프로젝트를 만들고 있어요.",
+        "회사 서비스와는 관계없는 개인 개발 이야기예요."
+      ],
+      "expected_score": 2,
+      "expected_queue": null,
+      "passed": false,
+      "job_id": "10f5579333ab4b3d86985f535d23f85f",
+      "last_observation": {
+        "state": "FAILED",
+        "stage": "classify",
+        "score": null,
+        "queue_class": null,
+        "reason": "PROXY_TIMEOUT",
+        "deadline_missed": false
+      },
+      "score": null,
+      "queue": null,
+      "state": "FAILED",
+      "status": null,
+      "reason": "PROXY_TIMEOUT",
+      "received_at": 1789793661.9486039,
+      "deadline_at": 1789793681.9486039,
+      "completed_at": 1789793671.692401,
+      "deadline_missed": false,
+      "classification": null,
+      "result": null,
+      "elapsed_seconds": 10.241,
+      "checks": {
+        "completed": false,
+        "score": false,
+        "queue": true,
+        "observed_filter_model": false,
+        "deadline_is_20_seconds": true,
+        "classification_timing_recorded": false,
+        "no_rag_result": true
+      }
+    },
+    {
+      "name": "ai_request",
+      "input": "AI야, 우리 운영서버 로그 보관일 좀 알려줘.",
+      "context": [
+        "우리 서비스 운영서버 정책을 확인하고 있어요."
+      ],
+      "expected_score": 5,
+      "expected_queue": "PQ",
+      "passed": true,
+      "job_id": "7e0231a383184530bbaec672cf25ec4b",
+      "last_observation": {
+        "state": "COMPLETED",
+        "stage": "done",
+        "score": 5,
+        "queue_class": "PQ",
+        "reason": null,
+        "deadline_missed": false
+      },
+      "score": 5,
+      "queue": "PQ",
+      "state": "COMPLETED",
+      "status": "popup",
+      "reason": null,
+      "received_at": 1789793672.1859741,
+      "deadline_at": 1789793692.1859741,
+      "completed_at": 1789793683.8845499,
+      "deadline_missed": false,
+      "classification": {
+        "score": 5,
+        "classification_state": "resolved",
+        "scope": "in_scope",
+        "speech_act": "request",
+        "addressed_to_ai": true,
+        "intent": "context",
+        "keywords": [
+          "우리 운영서버",
+          "로그 보관일"
+        ],
+        "query": "우리 운영서버 로그 보관일 알려줘",
+        "claim": "",
+        "reason_code": "IN_SCOPE_AI_REQUEST",
+        "action_supported": true,
+        "model": "gpt-5.6-luna",
+        "settings_version": 5,
+        "context_omitted": false,
+        "timings_ms": {
+          "classification": 3400
+        }
+      },
+      "result": {
+        "workspace_id": "6cffbe12cef54e26ac75f9b77028b3c8",
+        "session_id": "synthetic-priority-48ffd3ad89334470af7e9329645b3225",
+        "utterance_id": "synthetic-ai_request",
+        "utterance_revision": 1,
+        "revision_id": "91c58529eb0f4dfcb1d520b3039c3b0b",
+        "request_id": "c4d3dd52e0114eae94a0ef4e07855254",
+        "status": "popup",
+        "popup": {
+          "kind": "info",
+          "color": "blue",
+          "title": "운영서버 로그 보관 기간",
+          "message": "운영서버 로그 보관 기간은 90일입니다. 개발서버는 30일로 구분됩니다.",
+          "confidence": 0.99,
+          "citations": [
+            "91c58529eb0f4dfcb1d520b3039c3b0b.22de9725a1494a138cabd529e540ad19"
+          ],
+          "id": "4df827528ee5e2b9e289ad0197c8da9f"
+        },
+        "evidence": [
+          {
+            "chunk_id": "22de9725a1494a138cabd529e540ad19",
+            "text": "# 합성 검증 자료: 우리 서비스 운영 로그 정책\n우리 서비스의 운영서버 로그 보관 기간은 90일입니다.\n우리 서비스의 개발서버 로그 보관 기간은 30일입니다.\n운영 로그는 중앙 로그 저장소에서 관리합니다. 로그 보관 정책을 설명할 때 운영/개발 환경을 구분합니다.",
+            "title_path": [
+              "합성 검증 자료: 우리 서비스 운영 로그 정책"
+            ],
+            "location": {
+              "type": "text",
+              "start_line": 1,
+              "end_line": 4,
+              "char_start": 0,
+              "char_end": 148
+            },
+            "evidence_id": "91c58529eb0f4dfcb1d520b3039c3b0b.22de9725a1494a138cabd529e540ad19",
+            "workspace_id": "6cffbe12cef54e26ac75f9b77028b3c8",
+            "revision_id": "91c58529eb0f4dfcb1d520b3039c3b0b",
+            "document_id": "561ae285bfcc4e86b62296391078657e",
+            "document_version_id": "8cd644d1ad6943ffa6785e3b15c648c8",
+            "relative_path": "logs.md"
+          },
+          {
+            "chunk_id": "f248cb969b0b4966b75dd1eb2f4d9728",
+            "text": "# 합성 검증 자료: 우리 서비스 Docker 배포와 이미지 관리\n우리 서비스의 Docker 이미지는 사내 컨테이너 레지스트리에 저장합니다.\n이미지에는 배포 버전과 Git 커밋 해시를 태그로 붙입니다.\n운영에 배포 중인 이미지는 삭제하지 않습니다. 배포에 쓰이지 않는 이미지는 30일 후 정리합니다.\n개인 프로젝트의 이미지 관리는 우리 서비스 정책의 적용 대상이 아닙니다.",
+            "title_path": [
+              "합성 검증 자료: 우리 서비스 Docker 배포와 이미지 관리"
+            ],
+            "location": {
+              "type": "text",
+              "start_line": 1,
+              "end_line": 5,
+              "char_start": 0,
+              "char_end": 208
+            },
+            "evidence_id": "91c58529eb0f4dfcb1d520b3039c3b0b.f248cb969b0b4966b75dd1eb2f4d9728",
+            "workspace_id": "6cffbe12cef54e26ac75f9b77028b3c8",
+            "revision_id": "91c58529eb0f4dfcb1d520b3039c3b0b",
+            "document_id": "c98089047e4b49eebe7f79ab22ffcf62",
+            "document_version_id": "b5c23172e4e640ab967e5a957ee692f2",
+            "relative_path": "docker.md"
+          }
+        ],
+        "analysis": {
+          "keywords": [
+            "우리 운영서버",
+            "로그 보관일"
+          ],
+          "query": "우리 운영서버 로그 보관일 알려줘",
+          "intent": "context",
+          "claim": ""
+        },
+        "timings_ms": {
+          "extraction": 0,
+          "query_embedding": 382,
+          "retrieval": 4,
+          "generation": 7874,
+          "total": 8268
+        },
+        "guidance": {
+          "version": 0,
+          "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "included": false
+        },
+        "operating_prompt": {
+          "id": "2cccb7237a4b42faaa5024505bc0360a",
+          "version": 2,
+          "content_hash": "8f54fa9ad35f3ae591aefa6aab3d9e6dc83793dab0cc0a94b5ba87ec7e73cc29"
+        }
+      },
+      "elapsed_seconds": 12.272,
+      "checks": {
+        "completed": true,
+        "score": true,
+        "queue": true,
+        "observed_filter_model": true,
+        "deadline_is_20_seconds": true,
+        "classification_timing_recorded": true,
+        "grounded_result": true,
+        "rag_timing_recorded": true,
+        "deadline_met": true
+      }
+    }
+  ],
+  "checks": [
+    "synthetic workspace indexed, isolated consent and priority policy configured"
+  ],
+  "errors": [],
+  "cleanup": {
+    "completed": true
+  },
+  "observed_model": "gpt-5.6-luna",
+  "global_settings_version": 5,
+  "embedding_model": "intfloat/multilingual-e5-small",
+  "temporary_workspace_id": "6cffbe12cef54e26ac75f9b77028b3c8",
+  "temporary_policy": {
+    "version": 1,
+    "priority_response_target_seconds": 20,
+    "pressure_ratio": 0.5,
+    "protect_ratio": 0.8,
+    "recovery_ratio": 0.4,
+    "recovery_seconds": 3.0,
+    "context_wait_seconds": 2.0,
+    "filter_model": "gpt-5.6-luna",
+    "filter_timeout_seconds": 4.0,
+    "generation_timeout_seconds": 20.0,
+    "scope_profile": {
+      "description": "우리 서비스의 운영 로그와 Docker 배포 및 이미지 관리 정책",
+      "included_topics": [
+        "우리 서비스 운영 로그",
+        "우리 서비스 Docker 배포",
+        "운영 레지스트리"
+      ],
+      "excluded_topics": [
+        "개인 프로젝트",
+        "날씨",
+        "일상 대화"
+      ],
+      "aliases": [
+        "운영서버",
+        "우리 서비스",
+        "운영 인프라"
+      ]
+    }
+  },
+  "global_settings_unchanged": true,
+  "finished_at": "2026-09-19T04:54:44.459099+00:00"
+}

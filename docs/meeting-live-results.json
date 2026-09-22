@@ -1,0 +1,206 @@
+{
+  "synthetic": true,
+  "live_llm": true,
+  "checks": [
+    "temporary synthetic documents indexed with real E5 and isolated consent",
+    "temporary workspace and uploaded synthetic files deleted"
+  ],
+  "cases": [
+    {
+      "name": "correction",
+      "input": "운영서버 로그 기록은 45일 동안 서버에 남아요.",
+      "expected_kind": "warning",
+      "status": "popup",
+      "reason": null,
+      "analysis": {
+        "keywords": [
+          "운영서버",
+          "로그 기록",
+          "로그 보관 기간",
+          "서버"
+        ],
+        "query": "운영서버 로그 기록 보관 기간 서버",
+        "intent": "fact_check",
+        "claim": "운영서버 로그 기록은 45일 동안 서버에 남아요."
+      },
+      "popup": {
+        "kind": "warning",
+        "color": "red",
+        "title": "운영서버 로그 보관 기간 정정",
+        "message": "자료상 운영서버 로그 기록은 서버에 90일 동안 보관됩니다. 45일이 아니라 90일 기준으로 확인하세요.",
+        "confidence": 0.99,
+        "citations": [
+          "10de9af9a94944a39138a4bb9258d04f.9c3fba90759d4186858baf5ac326cbc8"
+        ],
+        "id": "662480985f3d4cbb2de925c671f74c29"
+      },
+      "timings_ms": {
+        "extraction": 3649,
+        "query_embedding": 65,
+        "retrieval": 4,
+        "generation": 4733,
+        "total": 8460
+      },
+      "passed": true
+    },
+    {
+      "name": "guidance",
+      "input": "운영서버 접속할 때는 꼭 개인키 필요해요.",
+      "expected_kind": "caution",
+      "status": "popup",
+      "reason": null,
+      "analysis": {
+        "keywords": [
+          "운영서버",
+          "접속",
+          "개인키",
+          "발급 절차"
+        ],
+        "query": "운영서버 접속 개인키 필요 여부 및 발급 절차 안내",
+        "intent": "practical_guidance",
+        "claim": ""
+      },
+      "popup": {
+        "kind": "caution",
+        "color": "orange",
+        "title": "운영서버 개인키 발급 안내",
+        "message": "개인키 발급 절차는 사내 포털의 보안 > 서버 접근 메뉴에서 확인할 수 있습니다. 발급은 보안 담당자 김가상 님을 통해 신청하세요. 개인키 원문은 공유하거나 회의 화면에 표시하지 마세요.",
+        "confidence": 0.99,
+        "citations": [
+          "10de9af9a94944a39138a4bb9258d04f.e673409a30904b288ad2bb33d26f2e3e"
+        ],
+        "id": "c375a4ea06d97f85b74ecdc1c52cb210"
+      },
+      "timings_ms": {
+        "extraction": 2511,
+        "query_embedding": 63,
+        "retrieval": 3,
+        "generation": 8231,
+        "total": 10816
+      },
+      "passed": true
+    },
+    {
+      "name": "confirmation",
+      "input": "운영서버 로그 기록은 90일 동안 보관됩니다.",
+      "expected_kind": "success",
+      "status": "popup",
+      "reason": null,
+      "analysis": {
+        "keywords": [
+          "운영서버",
+          "로그 기록",
+          "보관 기간"
+        ],
+        "query": "운영서버 로그 기록 보관 기간",
+        "intent": "fact_check",
+        "claim": "운영서버 로그 기록은 90일 동안 보관됩니다."
+      },
+      "popup": {
+        "kind": "success",
+        "color": "green",
+        "title": "운영 로그 보관 기간 확인",
+        "message": "운영서버 로그 기록은 90일 동안 서버에 보관된다는 정책과 일치합니다.",
+        "confidence": 0.99,
+        "citations": [
+          "10de9af9a94944a39138a4bb9258d04f.9c3fba90759d4186858baf5ac326cbc8"
+        ],
+        "id": "35e1c825bee34972b4504e769f86dd55"
+      },
+      "timings_ms": {
+        "extraction": 5965,
+        "query_embedding": 1459,
+        "retrieval": 87,
+        "generation": 5054,
+        "total": 12575
+      },
+      "passed": true
+    },
+    {
+      "name": "information",
+      "input": "운영서버 백업 일정은 어떻게 되나요?",
+      "expected_kind": "info",
+      "status": "popup",
+      "reason": null,
+      "analysis": {
+        "keywords": [
+          "운영서버",
+          "백업 일정"
+        ],
+        "query": "운영서버 백업 일정",
+        "intent": "context",
+        "claim": ""
+      },
+      "popup": {
+        "kind": "info",
+        "color": "blue",
+        "title": "운영서버 백업 일정",
+        "message": "운영서버 백업은 매일 오전 2시에 자동 실행됩니다. 백업 파일은 14일간 보관되며, 복구 요청은 플랫폼팀에서 접수합니다.",
+        "confidence": 0.98,
+        "citations": [
+          "10de9af9a94944a39138a4bb9258d04f.6f5eeba5aec94092866df211fbb2e65c"
+        ],
+        "id": "bd0da30bd2ac08d73051931e06a8d57d"
+      },
+      "timings_ms": {
+        "extraction": 5055,
+        "query_embedding": 832,
+        "retrieval": 10,
+        "generation": 5403,
+        "total": 11310
+      },
+      "passed": true
+    },
+    {
+      "name": "missing",
+      "input": "내년 달 기지에 배치할 양자 로봇 수는 몇 대인가요?",
+      "expected_kind": null,
+      "status": "insufficient_evidence",
+      "reason": "NO_SUPPORT",
+      "analysis": {
+        "keywords": [
+          "내년",
+          "달 기지",
+          "양자 로봇",
+          "배치 수량"
+        ],
+        "query": "내년 달 기지 양자 로봇 배치 수량",
+        "intent": "context",
+        "claim": ""
+      },
+      "popup": null,
+      "timings_ms": {
+        "extraction": 2474,
+        "query_embedding": 234,
+        "retrieval": 1,
+        "generation": 2793,
+        "total": 5510
+      },
+      "passed": true
+    },
+    {
+      "name": "smalltalk",
+      "input": "안녕하세요. 오늘 와 주셔서 감사합니다.",
+      "expected_kind": null,
+      "status": "suppressed",
+      "reason": "NO_RELEVANT_INFORMATION",
+      "analysis": {
+        "keywords": [],
+        "query": "",
+        "intent": "none",
+        "claim": ""
+      },
+      "popup": null,
+      "timings_ms": {
+        "extraction": 2298,
+        "query_embedding": 0,
+        "retrieval": 0,
+        "generation": 0,
+        "total": 2302
+      },
+      "passed": true
+    }
+  ],
+  "model": "gpt-5.6-terra",
+  "passed": true
+}

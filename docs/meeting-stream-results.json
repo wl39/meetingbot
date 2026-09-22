@@ -1,0 +1,94 @@
+{
+  "synthetic": true,
+  "fixture": "macOS Yuna Korean synthetic voice streamed as paced 16 kHz mono PCM; no hardware microphone",
+  "scope": "Single synthetic speaker integration check, not a real meeting or recognition-accuracy benchmark",
+  "pipeline": [
+    "real STT WebSocket",
+    "STT meeting bridge",
+    "LLM extraction",
+    "real E5 RAG",
+    "LLM popup"
+  ],
+  "spoken_text": "운영 서버 로그 기록은 사십오 일 동안 서버에 남아요.",
+  "checks": [
+    "no existing active STT session; global AI settings read only",
+    "temporary synthetic documents indexed; consent granted only to own workspace",
+    "canonical real STT utterance passed through bridge to red popup with 90-day citation"
+  ],
+  "cleanup": [
+    "own synthetic STT session deleted",
+    "own synthetic workspace/upload deleted",
+    "temporary synthesized audio files deleted"
+  ],
+  "passed": true,
+  "llm_model": "gpt-5.6-terra",
+  "audio_seconds": 5.423,
+  "stt_model": "large-v3-turbo",
+  "stt_state": "COMPLETED",
+  "stt_metrics": {
+    "processed_audio_ms": 5423,
+    "audio_backlog_ms": 0,
+    "asr_wall_seconds": 2.9727936660056002,
+    "asr_inference_seconds": 2.9619637919822708,
+    "retained_pcm_bytes": 19264000,
+    "audio_input_ms": 5423,
+    "first_caption_seconds": 13.39039616700029,
+    "first_stable_seconds": 16.363728458993137,
+    "diarization_until_ms": 5423,
+    "diarization_lag_ms": 0,
+    "diarization_seconds": 1.0969345000339672,
+    "total_seconds": 17.469739833963104
+  },
+  "stt_warnings": [],
+  "stt_recognized_text": "운영 서버 로그 기록은 45일 동안 서버에 남아요.",
+  "had_partial_caption": true,
+  "snapshot_count": 36,
+  "analyzed_utterance": {
+    "utterance_id": "utt_1ef2ffde3a35490eaa62facbeab276d7",
+    "revision": 3,
+    "text": "운영 서버 로그 기록은 45일 동안 서버에 남아요.",
+    "status": "stable",
+    "speaker_id": "spk_01",
+    "start_ms": 212,
+    "end_ms": 4072
+  },
+  "status": "popup",
+  "reason": null,
+  "analysis": {
+    "keywords": [
+      "운영 서버",
+      "로그 기록",
+      "로그 보관 기간",
+      "45일"
+    ],
+    "query": "운영 서버 로그 기록 보관 기간 서버 환경",
+    "intent": "fact_check",
+    "claim": "운영 서버 로그 기록은 45일 동안 서버에 남아요."
+  },
+  "popup": {
+    "kind": "warning",
+    "color": "red",
+    "title": "운영 로그 보관 기간 정정",
+    "message": "자료상 운영서버 로그는 45일이 아니라 90일 동안 서버에 보관됩니다. 개발서버 로그는 30일로 운영 환경과 구분됩니다.",
+    "confidence": 0.99,
+    "citations": [
+      "9500c6946b284d22b7c32d49d8a48519.8a8d0c6a7065464ab4ab0ed0f2fe82bb"
+    ],
+    "id": "292b5b7141fb6f2dc70e2519d7c5ce22"
+  },
+  "timings_ms": {
+    "stt_stream": 17536,
+    "bridge_analyze": 9718,
+    "rag_pipeline": {
+      "extraction": 2810,
+      "query_embedding": 404,
+      "retrieval": 25,
+      "generation": 6425,
+      "total": 9678
+    }
+  },
+  "cited_source_text": [
+    "# 합성 회의 검증 정책 — 로그 기록\n확정된 현행 정책: 운영서버 로그 기록은 90일 동안 서버에 보관합니다.\n개발서버 로그 기록은 30일 동안 서버에 보관합니다.\n운영서버와 개발서버의 보관 기간은 다릅니다."
+  ],
+  "total_ms": 29997
+}

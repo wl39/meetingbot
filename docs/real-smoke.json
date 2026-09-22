@@ -1,0 +1,43 @@
+{
+  "fixture": "macOS Yuna Korean synthetic speech; not a real meeting or diarization accuracy benchmark",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "model": {
+    "repo": "mlx-community/whisper-small-mlx",
+    "path": "/YOUR_HOME/.cache/huggingface/hub/models--mlx-community--whisper-small-mlx/snapshots/45f3915923c7a79a5a5b5a7d909d39aeb0e5630e",
+    "revision": "45f3915923c7a79a5a5b5a7d909d39aeb0e5630e"
+  },
+  "packages": {
+    "mlx-whisper": "0.4.3",
+    "mlx": "0.32.2",
+    "silero-vad": "6.2.1",
+    "onnxruntime": "1.29.0",
+    "pyannote.audio": "4.0.7",
+    "torch": "2.14.0",
+    "torchaudio": "2.11.0"
+  },
+  "audio": {
+    "duration_seconds": 5.82025,
+    "source_channels": 1,
+    "downmixed": false,
+    "sample_rate": 16000
+  },
+  "load_seconds": 24.238996000000043,
+  "runs": [
+    {
+      "seconds": 4.15661579099833,
+      "rtf": 0.7141644759242869,
+      "words": 9,
+      "text": " 오늘은 로그인 기능을 확인하겠습니다. 개포 일정은 금요일입니다. 네 알겠습니다."
+    },
+    {
+      "seconds": 0.8071846250095405,
+      "rtf": 0.13868555904119934,
+      "words": 9,
+      "text": " 오늘은 로그인 기능을 확인하겠습니다. 개포 일정은 금요일입니다. 네 알겠습니다."
+    }
+  ],
+  "vad_last_speech_sample": 92672,
+  "word_timestamps_valid": true,
+  "diarization": "NOT RUN: Community-1 access and HF_TOKEN unavailable"
+}

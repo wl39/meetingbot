@@ -1,0 +1,45 @@
+{
+  "deployed_at": "2026-09-12T08:06:17.055981+00:00",
+  "frontend_tests": 44,
+  "backend_tests": 102,
+  "rag_tests": 123,
+  "stt_ready": true,
+  "active_session": null,
+  "session_count": 10,
+  "utterance_count": 1522,
+  "sessions_unchanged": true,
+  "workspaces_unchanged": true,
+  "same_origin_rag_cookie_login": true,
+  "same_origin_csrf_logout": true,
+  "routes": {
+    "/": {
+      "status": 200,
+      "current_build": true
+    },
+    "/live": {
+      "status": 200,
+      "current_build": true
+    },
+    "/rag": {
+      "status": 200,
+      "current_build": true
+    },
+    "/rag/settings": {
+      "status": 200,
+      "current_build": true
+    }
+  },
+  "backup_directory": "/YOUR_SOURCE_DIR/meetingbot/.runtime/workspace-backups/20260912T080458Z",
+  "synthetic_ui_checks": [
+    "transcript and script mode retained",
+    "local WAV retained",
+    "RAG workspace and query draft retained",
+    "back navigation",
+    "live screen",
+    "390px no horizontal overflow"
+  ],
+  "legacy_rag_redirect": {
+    "status": 307,
+    "location": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net/rag/settings"
+  }
+}

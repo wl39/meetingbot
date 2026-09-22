@@ -1,0 +1,20 @@
+{
+  "state": "COMPLETED",
+  "warnings": [],
+  "utterance_count": 1,
+  "metrics": {
+    "upload_percent": 100.0,
+    "duration_seconds": 5.82025,
+    "transcribed_seconds": 5.82025,
+    "progress_percent": 100,
+    "source_channels": 2,
+    "downmixed": true,
+    "sample_rate": 16000,
+    "preprocess_seconds": 0.20387570900493301,
+    "asr_seconds": 4.165098833007505,
+    "diar_seconds": 1.1763925830018707,
+    "merge_seconds": 0.0008356249891221523,
+    "total_seconds": 5.56879725001636,
+    "rtf": 0.9567969159428478
+  }
+}

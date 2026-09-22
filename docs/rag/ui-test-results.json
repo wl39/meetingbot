@@ -1,0 +1,64 @@
+{
+  "checks": [
+    "HTTPS browser login and workspace library",
+    "server folder browse, explicit folder selection and persistent preview",
+    "close browser tab during indexing; reconnect and recover persisted READY job",
+    "real Korean search and original line snapshot in browser",
+    "workspace switch clears prior search and isolates 30-day policy",
+    "390px mobile layout has no horizontal overflow",
+    "browser API requests stay on the same public HTTPS origin",
+    "late A search response is discarded after switching to B",
+    "delete synthetic E2E workspace; originals preserved"
+  ],
+  "errors": [],
+  "requests": [
+    {
+      "method": "GET",
+      "url": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net:8443/api/rag/auth/session"
+    },
+    {
+      "method": "POST",
+      "url": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net:8443/api/rag/auth/login"
+    },
+    {
+      "method": "GET",
+      "url": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net:8443/api/rag/workspaces"
+    },
+    {
+      "method": "GET",
+      "url": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net:8443/api/rag/diagnostics"
+    },
+    {
+      "method": "GET",
+      "url": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net:8443/api/rag/source-roots"
+    },
+    {
+      "method": "GET",
+      "url": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net:8443/api/rag/source-roots/meeting-docs/entries?relative_path=&filter="
+    },
+    {
+      "method": "GET",
+      "url": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net:8443/api/rag/source-roots/meeting-docs/entries?relative_path=sample-project-a&filter="
+    },
+    {
+      "method": "POST",
+      "url": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net:8443/api/rag/source-previews"
+    },
+    {
+      "method": "GET",
+      "url": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net:8443/api/rag/source-previews/731d5f638bea46fcba18955eea7ae9e4"
+    },
+    {
+      "method": "POST",
+      "url": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net:8443/api/rag/workspaces"
+    },
+    {
+      "method": "POST",
+      "url": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net:8443/api/rag/workspaces/b025c886150148518876c8c47f9be4a5/index-jobs"
+    },
+    {
+      "method": "GET",
+      "url": "https://YOUR_DEVICE.YOUR_TAILNET.ts.net:8443/api/rag/workspaces"
+    }
+  ]
+}

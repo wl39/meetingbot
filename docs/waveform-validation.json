@@ -1,0 +1,302 @@
+{
+  "date": "2026-09-09",
+  "browser": "headless Chrome on macOS; isolated profile; synthetic audio and mocked transcript",
+  "ui": {
+    "checks": [
+      "11-minute AAC M4A local waveform without upload",
+      "Transcript play seeks, plays, and highlights entire speaker interval",
+      "Horizontal dragging, scrolling, keyboard boundaries and return-to-playhead",
+      "Distant utterance selection, zoom and playback rate",
+      "Waveform click changes playback position",
+      "1024px and 390px responsive layouts",
+      "Worker decodes bounded real peak tiles at distant positions with no browser errors"
+    ],
+    "errors": [],
+    "waveform": [
+      {
+        "key": "0:0",
+        "tiles": [
+          {
+            "start": 0,
+            "bins": 1000,
+            "max": 0.7227779626846313
+          }
+        ]
+      },
+      {
+        "key": "0:1",
+        "tiles": [
+          {
+            "start": 0,
+            "bins": 1000,
+            "max": 0.7227779626846313
+          },
+          {
+            "start": 10,
+            "bins": 1000,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "key": "0:0",
+        "tiles": [
+          {
+            "start": 0,
+            "bins": 1000,
+            "max": 0.7227779626846313
+          }
+        ]
+      },
+      {
+        "key": "0:1",
+        "tiles": [
+          {
+            "start": 0,
+            "bins": 1000,
+            "max": 0.7227779626846313
+          },
+          {
+            "start": 10,
+            "bins": 1000,
+            "max": 0
+          }
+        ]
+      },
+      {
+        "key": "0:0",
+        "tiles": [
+          {
+            "start": 0,
+            "bins": 1000,
+            "max": 0.7227779626846313
+          }
+        ]
+      },
+      {
+        "key": "0:0",
+        "tiles": [
+          {
+            "start": 0,
+            "bins": 1000,
+            "max": 0.7227779626846313
+          }
+        ]
+      },
+      {
+        "key": "16:18",
+        "tiles": [
+          {
+            "start": 160,
+            "bins": 1000,
+            "max": 0
+          },
+          {
+            "start": 170,
+            "bins": 1000,
+            "max": 0.7233346104621887
+          },
+          {
+            "start": 180,
+            "bins": 1000,
+            "max": 1.1007963252041009e-07
+          }
+        ]
+      },
+      {
+        "key": "17:17",
+        "tiles": [
+          {
+            "start": 170,
+            "bins": 1000,
+            "max": 0.7233346104621887
+          }
+        ]
+      },
+      {
+        "key": "16:18",
+        "tiles": [
+          {
+            "start": 160,
+            "bins": 1000,
+            "max": 0
+          },
+          {
+            "start": 170,
+            "bins": 1000,
+            "max": 0.7233346104621887
+          },
+          {
+            "start": 180,
+            "bins": 1000,
+            "max": 1.1007963252041009e-07
+          }
+        ]
+      },
+      {
+        "key": "17:18",
+        "tiles": [
+          {
+            "start": 170,
+            "bins": 1000,
+            "max": 0.7233346104621887
+          },
+          {
+            "start": 180,
+            "bins": 1000,
+            "max": 1.1007963252041009e-07
+          }
+        ]
+      }
+    ],
+    "highlightPixels": {
+      "selected": 16318,
+      "bars": 7449
+    }
+  },
+  "formats": [
+    {
+      "name": "korean.wav",
+      "duration": 5.820227,
+      "result": "real local peaks decoded",
+      "audit": [
+        {
+          "key": "0:0",
+          "tiles": [
+            {
+              "start": 0,
+              "max": 0.72314453125,
+              "bins": 1000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "waveform.mp3",
+      "duration": 5.820227,
+      "result": "real local peaks decoded",
+      "audit": [
+        {
+          "key": "0:0",
+          "tiles": [
+            {
+              "start": 0,
+              "max": 0.6985273361206055,
+              "bins": 1000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "waveform.flac",
+      "duration": 5.820227,
+      "result": "real local peaks decoded",
+      "audit": [
+        {
+          "key": "0:0",
+          "tiles": [
+            {
+              "start": 0,
+              "max": 0.72314453125,
+              "bins": 1000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "diagnostic-alac.m4a",
+      "duration": null,
+      "result": "browser does not support ALAC; explicit unsupported-format message"
+    },
+    {
+      "name": "waveform-300min.m4a",
+      "duration": 18000,
+      "result": "real local peaks decoded",
+      "audit": [
+        {
+          "key": "0:0",
+          "tiles": [
+            {
+              "start": 0,
+              "max": 0.32517632842063904,
+              "bins": 1000
+            }
+          ]
+        },
+        {
+          "key": "1799:1799",
+          "tiles": [
+            {
+              "start": 17990,
+              "max": 0,
+              "bins": 1000
+            }
+          ]
+        },
+        {
+          "key": "1798:1799",
+          "tiles": [
+            {
+              "start": 17980,
+              "max": 0,
+              "bins": 1000
+            },
+            {
+              "start": 17990,
+              "max": 0,
+              "bins": 1000
+            }
+          ]
+        },
+        {
+          "key": "1797:1798",
+          "tiles": [
+            {
+              "start": 17970,
+              "max": 0,
+              "bins": 1000
+            },
+            {
+              "start": 17980,
+              "max": 0,
+              "bins": 1000
+            }
+          ]
+        },
+        {
+          "key": "1794:1795",
+          "tiles": [
+            {
+              "start": 17940,
+              "max": 0.3453707695007324,
+              "bins": 1000
+            },
+            {
+              "start": 17950,
+              "max": 0,
+              "bins": 1000
+            }
+          ]
+        },
+        {
+          "key": "1793:1794",
+          "tiles": [
+            {
+              "start": 17930,
+              "max": 0.0018750386079773307,
+              "bins": 1000
+            },
+            {
+              "start": 17940,
+              "max": 0.3453707695007324,
+              "bins": 1000
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "checks": [
+    "SIGKILL running indexing job -> launchd restart -> durable SERVER_RESTARTED state",
+    "old READY revision, vector search and original evidence survive forced process termination",
+    "other workspace active revisions unchanged after restart"
+  ],
+  "recovery": {
+    "state": "FAILED",
+    "error_code": "SERVER_RESTARTED"
+  }
+}

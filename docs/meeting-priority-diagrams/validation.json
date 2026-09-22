@@ -1,0 +1,37 @@
+{
+  "mermaidVersion": "12.0.0",
+  "renderer": "playwright-core with local Google Chrome",
+  "syntax": "all five mermaid.parse() calls passed",
+  "diagrams": [
+    {
+      "name": "architecture",
+      "type": "flowchart-v2",
+      "width": 1395,
+      "height": 1371
+    },
+    {
+      "name": "scheduling-modes",
+      "type": "stateDiagram",
+      "width": 587,
+      "height": 648
+    },
+    {
+      "name": "job-lifecycle",
+      "type": "stateDiagram",
+      "width": 1159,
+      "height": 630
+    },
+    {
+      "name": "use-cases",
+      "type": "flowchart-v2",
+      "width": 874,
+      "height": 795
+    },
+    {
+      "name": "sequence",
+      "type": "sequence",
+      "width": 1509,
+      "height": 1086
+    }
+  ]
+}

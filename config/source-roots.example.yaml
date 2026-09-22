@@ -1,0 +1,5 @@
+# Paths are on the server. Edit locally; never expose a whole home directory.
+roots:
+  - id: meeting-docs
+    label: 회의 자료
+    path: /Users/YOUR_USER/MeetingDocs
